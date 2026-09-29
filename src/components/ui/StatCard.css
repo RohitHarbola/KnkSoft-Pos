@@ -1,0 +1,81 @@
+/* =============================================
+   StatCard.css — Stats card UI component
+   ============================================= */
+
+.stat-card {
+  background: #ffffff;
+  border: 1.5px solid #e8e2de;
+  border-radius: 16px;
+  padding: 1.25rem 1.5rem;
+  text-align: center;
+  transition: box-shadow 0.25s ease, border-color 0.25s ease, transform 0.2s ease;
+}
+
+.stat-card:hover {
+  box-shadow: 0 6px 24px rgba(0, 0, 0, 0.07);
+  border-color: #FF4C00;
+  transform: translateY(-2px);
+}
+
+.stat-card-value {
+  font-size: 2rem;
+  font-weight: 800;
+  color: #1A1918;
+  letter-spacing: -0.04em;
+  line-height: 1;
+  margin-bottom: 0.3rem;
+}
+
+.stat-card-value .accent {
+  color: #FF4C00;
+}
+
+.stat-card-label {
+  font-size: 0.82rem;
+  font-weight: 500;
+  color: #9b9089;
+  line-height: 1.4;
+}
+
+.stat-card-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 12px;
+  background: #FFF3EF;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #FF4C00;
+  margin: 0 auto 0.75rem;
+}
+
+/* Dark stat card */
+.stat-card-dark {
+  background: #1A2030;
+  border-color: rgba(255, 255, 255, 0.06);
+}
+
+.stat-card-dark .stat-card-value {
+  color: #ffffff;
+}
+
+.stat-card-dark .stat-card-label {
+  color: rgba(255, 255, 255, 0.45);
+}
+
+.stat-card-dark .stat-card-icon {
+  background: rgba(255, 76, 0, 0.12);
+}
+
+/* Inline layout */
+.stat-card-inline {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  text-align: left;
+}
+
+.stat-card-inline .stat-card-icon {
+  margin: 0;
+  flex-shrink: 0;
+}

@@ -1,0 +1,70 @@
+/* =============================================
+   AnnouncementBar.css — Top promo strip
+   ============================================= */
+
+.announcement-bar {
+  background: #E0F2FE;
+  border-bottom: 1px solid #BAE6FD;
+  color: #0369A1;
+  text-align: center;
+  padding: 9px 1rem;
+  font-family: 'Inter', system-ui, sans-serif;
+  font-size: 0.82rem;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+  line-height: 1.4;
+}
+
+.announcement-bar a {
+  color: #0284C7;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  font-weight: 700;
+  transition: opacity 0.2s ease, color 0.2s ease;
+}
+
+.announcement-bar a:hover {
+  opacity: 0.85;
+  color: #0369A1;
+}
+
+.announcement-bar-inner {
+  max-width: 1280px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+}
+
+.announcement-dot {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: rgba(3, 105, 161, 0.4);
+  display: inline-block;
+  flex-shrink: 0;
+}
+
+.announcement-close {
+  position: absolute;
+  right: 1rem;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  color: #0369A1;
+  cursor: pointer;
+  padding: 4px;
+  border-radius: 4px;
+  transition: color 0.2s ease, background-color 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.announcement-close:hover {
+  color: #0C4A6E;
+  background: rgba(3, 105, 161, 0.12);
+}

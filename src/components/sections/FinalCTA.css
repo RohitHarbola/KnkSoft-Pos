@@ -1,0 +1,202 @@
+/* =============================================
+   FinalCTA.css — Squarespace-inspired 3D Particle Sphere CTA
+   ============================================= */
+
+.final-cta-section {
+  background: #000000;
+  min-height: 680px;
+  padding: 7rem 0 6.5rem;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+/* 3D Particle Globe Canvas — Perfectly centered in background */
+.final-cta-sphere-canvas {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  height: 100%;
+  max-width: 960px;
+  max-height: 960px;
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* Ambient vignette fade to seamless black */
+.final-cta-vignette {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 50% 50%, transparent 35%, rgba(0, 0, 0, 0.75) 90%);
+  pointer-events: none;
+  z-index: 2;
+}
+
+.final-cta-inner {
+  max-width: 860px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+  text-align: center;
+  position: relative;
+  z-index: 5;
+  width: 100%;
+}
+
+.final-cta-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  border-radius: 100px;
+  padding: 6px 16px;
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: #ff9466;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin-bottom: 1.75rem;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+.final-cta-title {
+  font-size: clamp(2.2rem, 4.8vw, 3.75rem);
+  font-weight: 800;
+  color: #ffffff;
+  line-height: 1.12;
+  letter-spacing: -0.035em;
+  margin-bottom: 1.25rem;
+  text-shadow: 0 4px 24px rgba(0, 0, 0, 0.9);
+}
+
+.final-cta-title-accent {
+  background: linear-gradient(135deg, #ffffff 30%, #ff7a3d 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  display: inline;
+}
+
+.final-cta-description {
+  font-size: clamp(1rem, 1.3vw, 1.15rem);
+  font-weight: 400;
+  color: rgba(255, 255, 255, 0.72);
+  line-height: 1.65;
+  max-width: 580px;
+  margin: 0 auto 2.5rem;
+  text-shadow: 0 2px 12px rgba(0, 0, 0, 0.8);
+}
+
+/* Squarespace Signature Buttons */
+.final-cta-buttons {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.15rem;
+  flex-wrap: wrap;
+}
+
+/* Crisp Solid White Button (Squarespace Get Started style) */
+.final-cta-primary {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: #ffffff;
+  color: #000000;
+  border: 1px solid #ffffff;
+  border-radius: 100px;
+  padding: 16px 36px;
+  font-size: 0.95rem;
+  font-weight: 800;
+  cursor: pointer;
+  text-decoration: none;
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  font-family: 'Inter', system-ui, sans-serif;
+  letter-spacing: -0.01em;
+  box-shadow: 0 10px 30px rgba(255, 255, 255, 0.15);
+}
+
+.final-cta-primary:hover {
+  background: #f1f5f9;
+  transform: translateY(-2px) scale(1.02);
+  box-shadow: 0 16px 40px rgba(255, 255, 255, 0.25);
+  color: #000000;
+}
+
+.final-cta-secondary {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(255, 255, 255, 0.06);
+  color: #ffffff;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  border-radius: 100px;
+  padding: 15px 30px;
+  font-size: 0.92rem;
+  font-weight: 700;
+  cursor: pointer;
+  text-decoration: none;
+  transition: all 0.25s ease;
+  font-family: 'Inter', system-ui, sans-serif;
+  backdrop-filter: blur(10px);
+}
+
+.final-cta-secondary:hover {
+  border-color: rgba(255, 255, 255, 0.6);
+  background: rgba(255, 255, 255, 0.14);
+  color: #ffffff;
+  transform: translateY(-2px);
+}
+
+/* Trust indicators */
+.final-cta-trust {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+  margin-top: 2.75rem;
+}
+
+.final-cta-trust-item {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  font-size: 0.82rem;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.55);
+}
+
+.final-cta-trust-icon {
+  color: #22C55E;
+  flex-shrink: 0;
+}
+
+@media (max-width: 640px) {
+  .final-cta-section {
+    padding: 5rem 0 4.5rem;
+    min-height: auto;
+  }
+
+  .final-cta-buttons {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .final-cta-primary,
+  .final-cta-secondary {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .final-cta-trust {
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+}

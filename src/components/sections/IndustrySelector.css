@@ -1,0 +1,218 @@
+/* =============================================
+   IndustrySelector.css — Industry tabs section
+   ============================================= */
+
+.industry-selector-section {
+  background: #ffffff;
+  padding: 3.5rem 0;
+}
+
+.industry-selector-inner {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+.industry-selector-header {
+  text-align: center;
+  max-width: 600px;
+  margin: 0 auto 3rem;
+}
+
+.industry-selector-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: #FFF3EF;
+  border: 1px solid #FFD5C2;
+  border-radius: 100px;
+  padding: 5px 14px;
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: #FF4C00;
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+  margin-bottom: 1rem;
+}
+
+.industry-selector-title {
+  font-size: 1.875rem;
+  font-weight: 700;
+  color: #1A1918;
+  line-height: 1.15;
+  letter-spacing: -0.025em;
+  margin-bottom: 0.75rem;
+}
+
+@media (min-width: 640px) {
+  .industry-selector-title { font-size: 2.25rem; }
+}
+
+@media (min-width: 1280px) {
+  .industry-selector-title { font-size: 2.5rem; }
+}
+
+.industry-selector-subtitle {
+  font-size: 1rem;
+  font-weight: 300;
+  color: #565352;
+  line-height: 1.65;
+}
+
+/* Industry pills/tabs */
+.industry-tabs {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-bottom: 2.5rem;
+}
+
+.industry-tab {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 20px;
+  border: 1.5px solid #e8e2de;
+  border-radius: 100px;
+  background: #ffffff;
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: #565352;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-family: 'Inter', system-ui, sans-serif;
+}
+
+.industry-tab:hover {
+  border-color: #FF4C00;
+  color: #FF4C00;
+  background: #FFF3EF;
+}
+
+.industry-tab.active {
+  background: #FF4C00;
+  border-color: #FF4C00;
+  color: #ffffff;
+  box-shadow: 0 4px 16px rgba(255, 76, 0, 0.25);
+}
+
+.industry-tab-icon {
+  width: 18px;
+  height: 18px;
+  flex-shrink: 0;
+}
+
+/* Industry cards grid */
+.industry-cards-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.25rem;
+}
+
+@media (max-width: 1024px) {
+  .industry-cards-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 640px) {
+  .industry-cards-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.industry-card {
+  background: #ffffff;
+  border: 1.5px solid #e8e2de;
+  border-radius: 20px;
+  padding: 1.75rem;
+  text-decoration: none;
+  display: block;
+  transition: box-shadow 0.3s ease, border-color 0.3s ease, transform 0.2s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.industry-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: #FF4C00;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.3s ease;
+}
+
+.industry-card:hover::before {
+  transform: scaleX(1);
+}
+
+.industry-card:hover {
+  box-shadow: 0 10px 36px rgba(0, 0, 0, 0.07);
+  border-color: #d4cac4;
+  transform: translateY(-4px);
+}
+
+.industry-card-icon-wrap {
+  width: 52px;
+  height: 52px;
+  border-radius: 14px;
+  background: #FFF3EF;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #FF4C00;
+  margin-bottom: 1.25rem;
+  transition: background-color 0.2s ease;
+}
+
+.industry-card:hover .industry-card-icon-wrap {
+  background: #FF4C00;
+  color: #ffffff;
+}
+
+.industry-card-name {
+  font-size: 1rem;
+  font-weight: 700;
+  color: #1A1918;
+  margin-bottom: 0.5rem;
+  line-height: 1.3;
+  transition: color 0.2s ease;
+}
+
+.industry-card:hover .industry-card-name {
+  color: #FF4C00;
+}
+
+.industry-card-desc {
+  font-size: 0.82rem;
+  font-weight: 300;
+  color: #9b9089;
+  line-height: 1.6;
+  margin-bottom: 1rem;
+}
+
+.industry-card-link {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: #FF4C00;
+}
+
+.industry-card-feat-preview {
+  background: #f9f5f3;
+  border-radius: 12px;
+  padding: 0.75rem;
+  font-size: 0.78rem;
+  color: #565352;
+  font-weight: 400;
+  margin-top: 0.75rem;
+  line-height: 1.5;
+}

@@ -1,0 +1,615 @@
+/* =============================================
+   Hero.css — Toast POS-inspired Hero Section
+   Light (White) Theme — Refined & Balanced
+   ============================================= */
+
+.hero-section {
+  background: #ffffff;
+  min-height: 82vh;
+  display: flex;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+  padding: 3.5rem 0 4rem;
+}
+
+/* ============================================================
+   BACKGROUND LAYERS
+   ============================================================ */
+.hero-bg-image-container {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.hero-bg-dark-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, #ffffff 0%, #FFFBF7 55%, #ffffff 100%);
+  pointer-events: none;
+  z-index: 1;
+}
+
+.hero-bg-radial-glow {
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(circle 500px at 8% 20%, rgba(255, 76, 0, 0.09) 0%, transparent 65%),
+    radial-gradient(circle 460px at 95% 85%, rgba(255, 76, 0, 0.06) 0%, transparent 60%);
+  pointer-events: none;
+  z-index: 2;
+}
+
+.hero-grid-pattern {
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(rgba(13, 17, 23, 0.07) 1px, transparent 1px);
+  background-size: 28px 28px;
+  pointer-events: none;
+  z-index: 3;
+  -webkit-mask-image: radial-gradient(ellipse 80% 70% at 50% 40%, black 20%, transparent 70%);
+  mask-image: radial-gradient(ellipse 80% 70% at 50% 40%, black 20%, transparent 70%);
+}
+
+/* ============================================================
+   LAYOUT
+   ============================================================ */
+.hero-inner {
+  max-width: 1240px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+  display: grid;
+  grid-template-columns: 1.05fr 1fr;
+  gap: 3.5rem;
+  align-items: center;
+  position: relative;
+  z-index: 5;
+  width: 100%;
+}
+
+@media (max-width: 1024px) {
+  .hero-inner {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+    text-align: center;
+  }
+}
+
+/* ============================================================
+   LEFT CONTENT
+   ============================================================ */
+.hero-content {
+  min-width: 0;
+}
+
+.hero-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(255, 76, 0, 0.08);
+  border: 1px solid rgba(255, 76, 0, 0.22);
+  border-radius: 100px;
+  padding: 6px 14px;
+  margin-bottom: 1.25rem;
+  font-size: 0.7rem;
+  line-height: 1.5rem;
+  font-weight: 700;
+  color: #FF4C00;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  text-align: left;
+}
+
+.hero-pill-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #1A1918;
+  animation: heroPillPulse 1.8s ease-in-out infinite;
+  flex-shrink: 0;
+}
+
+@keyframes heroPillPulse {
+
+  0%,
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+
+  50% {
+    opacity: 0.5;
+    transform: scale(0.75);
+  }
+}
+
+.hero-headline {
+  font-size: 1.875rem;
+  font-weight: 700;
+  color: #0D1117;
+  line-height: 1.15;
+  letter-spacing: -0.025em;
+  margin-bottom: 1rem;
+  max-width: 560px;
+}
+
+@media (min-width: 640px) {
+  .hero-headline {
+    font-size: 2.25rem;
+  }
+}
+
+@media (min-width: 1280px) {
+  .hero-headline {
+    font-size: 2.5rem;
+  }
+}
+
+@media (max-width: 1024px) {
+  .hero-headline {
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+.hero-headline-accent {
+  background: linear-gradient(135deg, #4169E1, #7B68EE);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.hero-description {
+  max-width: 42rem;
+  /* max-w-2xl */
+  font-size: 1rem;
+  /* text-base */
+  font-weight: 400;
+  color: #374151;
+  line-height: 1.7;
+  margin-bottom: 1.5rem;
+}
+
+.hero-description strong {
+  color: #111827 !important;
+  font-weight: 700 !important;
+}
+
+@media (min-width: 1024px) {
+  .hero-description {
+    font-size: 1.125rem;
+    /* lg:text-lg */
+    line-height: 1.75rem;
+  }
+}
+
+@media (max-width: 1024px) {
+  .hero-description {
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+/* ============================================================
+   FEATURE CHIPS
+   ============================================================ */
+.hero-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 1.75rem;
+}
+
+@media (max-width: 1024px) {
+  .hero-chips {
+    justify-content: center;
+  }
+}
+
+.hero-chip {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  background: #FFF6F1;
+  border: 1px solid rgba(255, 76, 0, 0.16);
+  border-radius: 100px;
+  padding: 6px 13px;
+  font-size: 0.76rem;
+  font-weight: 600;
+  color: #7A3A1A;
+}
+
+.hero-chip-icon {
+  color: #FF4C00;
+  width: 13px;
+  height: 13px;
+  flex-shrink: 0;
+}
+
+/* ============================================================
+   CTA GROUP
+   ============================================================ */
+.hero-cta-group {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+  flex-wrap: wrap;
+}
+
+@media (max-width: 1024px) {
+  .hero-cta-group {
+    justify-content: center;
+  }
+}
+
+.hero-cta-primary {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: #FF4C00;
+  color: #ffffff;
+  border: none;
+  border-radius: 100px;
+  padding: 14px 28px;
+  font-size: 0.94rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background-color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
+  text-decoration: none;
+  font-family: 'Inter', system-ui, sans-serif;
+}
+
+.hero-cta-primary:hover {
+  background: #DE3700;
+  transform: translateY(-2px);
+  box-shadow: 0 10px 28px rgba(255, 76, 0, 0.35);
+}
+
+.hero-cta-secondary {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: transparent;
+  color: #0D1117;
+  border: 1.5px solid rgba(13, 17, 23, 0.16);
+  border-radius: 100px;
+  padding: 13px 24px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  text-decoration: none;
+  font-family: 'Inter', system-ui, sans-serif;
+}
+
+.hero-cta-secondary:hover {
+  border-color: rgba(13, 17, 23, 0.4);
+  background: rgba(13, 17, 23, 0.04);
+  color: #0D1117;
+}
+
+/* ============================================================
+   TRUST STRIP
+   ============================================================ */
+.hero-trust-strip {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+  margin-top: 1.5rem;
+  flex-wrap: wrap;
+}
+
+@media (max-width: 1024px) {
+  .hero-trust-strip {
+    justify-content: center;
+    gap: 1rem;
+  }
+}
+
+.hero-trust-item {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.78rem;
+  font-weight: 500;
+  color: rgba(13, 17, 23, 0.58);
+}
+
+.hero-trust-icon {
+  color: #22C55E;
+  flex-shrink: 0;
+}
+
+/* ============================================================
+   RIGHT VISUAL PANEL
+   ============================================================ */
+.hero-visual {
+  position: relative;
+  width: 100%;
+  min-width: 0;
+}
+
+.hero-screen-card {
+  background: #151B26;
+  border: 1px solid rgba(13, 17, 23, 0.08);
+  border-radius: 18px;
+  overflow: hidden;
+  box-shadow:
+    0 24px 60px -20px rgba(13, 17, 23, 0.28),
+    0 12px 28px -12px rgba(255, 76, 0, 0.12),
+    0 0 0 1px rgba(13, 17, 23, 0.05);
+  animation: heroCardFloat 7s ease-in-out infinite;
+}
+
+@keyframes heroCardFloat {
+
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+
+  50% {
+    transform: translateY(-6px);
+  }
+}
+
+@media (max-width: 768px) {
+  .hero-screen-card {
+    animation: none;
+  }
+}
+
+.hero-screen-topbar {
+  background: #1E2638;
+  padding: 9px 14px;
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  flex-wrap: wrap;
+}
+
+.hero-screen-dot {
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+/* ============================================================
+   DASHBOARD PREVIEW
+   ============================================================ */
+.hero-dashboard-preview {
+  position: relative;
+  width: 100%;
+  background: #0d1117;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.hero-dashboard-img-wrapper {
+  position: relative;
+  width: 100%;
+  background: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.hero-dashboard-img {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: contain !important;
+  transition: transform 0.4s ease;
+}
+
+.hero-dashboard-preview:hover .hero-dashboard-img {
+  transform: scale(1.01);
+}
+
+.hero-dashboard-bar {
+  background: #141923;
+  padding: 9px 14px;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  font-size: 0.72rem;
+  color: #ffffff;
+  flex-wrap: wrap;
+}
+
+.hero-dashboard-switch-btn {
+  background: transparent;
+  border: none;
+  color: #FF4C00;
+  font-weight: 700;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 0.72rem;
+  padding: 4px 8px;
+  border-radius: 6px;
+  transition: all 0.2s ease;
+  font-family: 'Inter', system-ui, sans-serif;
+}
+
+.hero-dashboard-switch-btn:hover {
+  background: rgba(255, 76, 0, 0.15);
+  color: #FF7A3D;
+}
+
+/* ============================================================
+   TERMINAL / SIMULATOR VIEW
+   ============================================================ */
+.hero-screen-body {
+  padding: 1.1rem;
+}
+
+/* ============================================================
+   FLOATING KPI BADGES (repositioned to not overlap UI controls)
+   ============================================================ */
+.hero-kpi-badge {
+  position: absolute;
+  background: #ffffff;
+  border-radius: 14px;
+  padding: 9px 13px;
+  box-shadow:
+    0 14px 32px rgba(13, 17, 23, 0.18),
+    0 0 0 1px rgba(13, 17, 23, 0.06);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  animation: heroBadgeFloat 4.5s ease-in-out infinite;
+  z-index: 10;
+}
+
+/* Move top badge to the RIGHT-TOP so it doesn't cover the view-switcher */
+.hero-kpi-badge.left {
+  right: -14px;
+  left: auto;
+  top: -18px;
+  animation-delay: 0.5s;
+}
+
+.hero-kpi-badge.bottom {
+  left: -18px;
+  right: auto;
+  bottom: -18px;
+  animation-delay: 1s;
+}
+
+@media (max-width: 1200px) {
+  .hero-kpi-badge.left {
+    right: -6px;
+  }
+
+  .hero-kpi-badge.bottom {
+    left: -6px;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero-kpi-badge {
+    display: none !important;
+  }
+}
+
+@keyframes heroBadgeFloat {
+
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-6px);
+  }
+}
+
+.hero-kpi-icon {
+  width: 34px;
+  height: 34px;
+  border-radius: 10px;
+  background: #FFF3EF;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  color: #FF4C00;
+}
+
+.hero-kpi-value {
+  font-size: 1.02rem;
+  font-weight: 800;
+  color: #1A1918;
+  line-height: 1;
+}
+
+.hero-kpi-label {
+  font-size: 0.68rem;
+  font-weight: 500;
+  color: #9b9089;
+  white-space: nowrap;
+}
+
+/* ============================================================
+   MOBILE TUNING
+   ============================================================ */
+@media (max-width: 768px) {
+  .hero-section {
+    padding: 2.5rem 0 2.5rem;
+    min-height: auto;
+  }
+
+  .hero-inner {
+    padding: 0 1rem;
+    gap: 2.25rem;
+  }
+
+  .hero-pill {
+    font-size: 0.62rem;
+    padding: 5px 11px;
+    letter-spacing: 0.06em;
+    text-align: center;
+  }
+
+  .hero-headline {
+    font-size: 1.75rem;
+  }
+
+  .hero-description {
+    font-size: 0.92rem;
+  }
+
+  .hero-cta-group {
+    flex-direction: column;
+    width: 100%;
+    gap: 0.7rem;
+  }
+
+  .hero-cta-primary,
+  .hero-cta-secondary {
+    width: 100%;
+    justify-content: center;
+    padding: 13px 22px;
+  }
+
+  .hero-chip {
+    font-size: 0.7rem;
+    padding: 5px 11px;
+  }
+
+  .hero-trust-strip {
+    flex-direction: column;
+    gap: 0.5rem;
+    align-items: center;
+  }
+
+  .hero-trust-item {
+    font-size: 0.72rem;
+  }
+
+  .hero-screen-topbar {
+    padding: 8px 12px;
+  }
+
+  .hero-screen-body {
+    padding: 0.9rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-headline {
+    font-size: 1.6rem;
+  }
+}

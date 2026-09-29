@@ -1,0 +1,140 @@
+/* =============================================
+   Header.css — Toast POS-inspired Navbar
+   ============================================= */
+
+/* Sticky white navbar */
+.header-root {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 50;
+  background: #ffffff;
+  border-bottom: 1.5px solid #e8e2de;
+  height: 72px;
+  display: flex;
+  align-items: center;
+  transition: box-shadow 0.3s ease;
+}
+
+.header-root.scrolled {
+  box-shadow: 0 2px 16px rgba(0, 0, 0, 0.07);
+}
+
+.header-inner {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+
+/* Nav links */
+.header-nav-link {
+  font-family: 'Inter', system-ui, sans-serif;
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: #252525;
+  text-decoration: none;
+  padding: 6px 12px;
+  border-radius: 8px;
+  transition: color 0.2s ease, background-color 0.2s ease;
+  letter-spacing: 0.01em;
+}
+
+.header-nav-link:hover {
+  color: #FF4C00;
+  background-color: rgba(255, 76, 0, 0.06);
+}
+
+/* CTA buttons */
+.header-btn-outline {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: #D4340B;
+  background: transparent;
+  border: 1.5px solid #D4340B;
+  border-radius: 100px;
+  padding: 9px 22px;
+  cursor: pointer;
+  transition: background-color 0.2s ease, color 0.2s ease;
+  white-space: nowrap;
+}
+
+.header-btn-outline:hover {
+  background-color: #D4340B;
+  color: #ffffff;
+}
+
+.header-btn-primary {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: #ffffff;
+  background: #FF4C00;
+  border: none;
+  border-radius: 100px;
+  padding: 10px 22px;
+  cursor: pointer;
+  transition: background-color 0.2s ease, transform 0.15s ease;
+  white-space: nowrap;
+}
+
+.header-btn-primary:hover {
+  background: #DE3700;
+  transform: translateY(-1px);
+}
+
+/* Mobile menu backdrop */
+.header-mobile-menu {
+  background: #ffffff;
+  border-top: 1.5px solid #e8e2de;
+  padding: 1rem 1.5rem;
+}
+
+.header-mobile-menu .header-nav-link {
+  display: block;
+  padding: 10px 0;
+  border-bottom: 1px solid #f0ebe8;
+  border-radius: 0;
+}
+
+/* Dropdown panel */
+.header-dropdown {
+  background: #ffffff;
+  border: 1.5px solid #e8e2de;
+  border-radius: 20px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08);
+  padding: 0.75rem;
+}
+
+.header-dropdown-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 14px;
+  border-radius: 12px;
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: #252525;
+  text-decoration: none;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.header-dropdown-item:hover {
+  background-color: #FFF3EF;
+  color: #FF4C00;
+}
+
+.header-dropdown-icon {
+  width: 36px;
+  height: 36px;
+  border-radius: 10px;
+  background: #FFF3EF;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  color: #FF4C00;
+}

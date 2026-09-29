@@ -1,0 +1,192 @@
+/* =============================================
+   Integrations.css — Partner integrations section
+   ============================================= */
+
+.integrations-section {
+  background: #ffffff;
+  padding: 5rem 0;
+}
+
+.integrations-inner {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+.integrations-header {
+  text-align: center;
+  max-width: 600px;
+  margin: 0 auto 3.5rem;
+}
+
+.integrations-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: #FFF3EF;
+  border: 1px solid #FFD5C2;
+  border-radius: 100px;
+  padding: 5px 14px;
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: #FF4C00;
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+  margin-bottom: 1rem;
+}
+
+.integrations-title {
+  font-size: 1.875rem;
+  font-weight: 700;
+  color: #1A1918;
+  line-height: 1.15;
+  letter-spacing: -0.025em;
+  margin-bottom: 0.75rem;
+}
+
+@media (min-width: 640px) {
+  .integrations-title {
+    font-size: 2.25rem;
+  }
+}
+
+@media (min-width: 1280px) {
+  .integrations-title {
+    font-size: 2.5rem;
+  }
+}
+
+.integrations-subtitle {
+  font-size: 1rem;
+  font-weight: 300;
+  color: #565352;
+  line-height: 1.65;
+}
+
+/* Integration cards */
+.integrations-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+@media (max-width: 1024px) {
+  .integrations-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 640px) {
+  .integrations-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.integration-card {
+  background: #f9f5f3;
+  border: 1.5px solid #e8e2de;
+  border-radius: 16px;
+  padding: 1.25rem;
+  text-align: center;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease, transform 0.2s ease;
+  cursor: pointer;
+}
+
+.integration-card:hover {
+  border-color: #FF4C00;
+  box-shadow: 0 6px 24px rgba(255, 76, 0, 0.08);
+  transform: translateY(-3px);
+  background: #ffffff;
+}
+
+.integration-card-icon {
+  width: 48px;
+  height: 48px;
+  border-radius: 12px;
+  background: #ffffff;
+  border: 1.5px solid #e8e2de;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 0.75rem;
+  font-size: 1.5rem;
+  color: #FF4C00;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.integration-card-name {
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: #252525;
+  line-height: 1.3;
+}
+
+.integration-card-type {
+  font-size: 0.72rem;
+  font-weight: 400;
+  color: #9b9089;
+  margin-top: 2px;
+}
+
+/* Native badge */
+.integration-card-native {
+  display: inline-block;
+  background: #E8FBF0;
+  border: 1px solid #BBF0D1;
+  border-radius: 100px;
+  padding: 2px 8px;
+  font-size: 0.65rem;
+  font-weight: 700;
+  color: #1A8041;
+  margin-top: 0.5rem;
+}
+
+/* Bottom CTA banner */
+.integrations-cta-banner {
+  background: #f9f5f3;
+  border: 1.5px solid #e8e2de;
+  border-radius: 20px;
+  padding: 1.75rem 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.integrations-cta-text {
+  font-size: 1rem;
+  font-weight: 700;
+  color: #1A1918;
+}
+
+.integrations-cta-sub {
+  font-size: 0.85rem;
+  font-weight: 300;
+  color: #565352;
+  margin-top: 0.25rem;
+}
+
+.integrations-cta-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: #FF4C00;
+  color: #ffffff;
+  border: none;
+  border-radius: 100px;
+  padding: 12px 24px;
+  font-size: 0.875rem;
+  font-weight: 700;
+  cursor: pointer;
+  text-decoration: none;
+  transition: background-color 0.2s ease, transform 0.15s ease;
+  font-family: 'Inter', system-ui, sans-serif;
+  white-space: nowrap;
+}
+
+.integrations-cta-btn:hover {
+  background: #DE3700;
+  transform: translateY(-1px);
+}

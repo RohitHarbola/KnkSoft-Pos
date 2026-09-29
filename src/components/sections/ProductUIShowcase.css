@@ -1,0 +1,25 @@
+/* =============================================
+   ProductUIShowcase.css — Product Showcase Section
+   Styled consistently with FAQ section typography and layout
+   ============================================= */
+
+.product-showcase-section {
+  background: #f8fafc;
+  padding: 4.5rem 0 5.5rem;
+  border-top: 1px solid #e2e8f0;
+  border-bottom: 1px solid #e2e8f0;
+  position: relative;
+  overflow: hidden;
+}
+
+.product-showcase-inner {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+@media (max-width: 640px) {
+  .product-showcase-section {
+    padding: 3rem 0 4rem;
+  }
+}

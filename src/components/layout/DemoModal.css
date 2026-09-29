@@ -1,0 +1,194 @@
+/* =============================================
+   DemoModal.css — Modern Light Theme Demo Modal (No-Scroll Compact)
+   ============================================= */
+
+.demo-modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(15, 23, 42, 0.65);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  z-index: 999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+  animation: modalOverlayFadeIn 0.25s ease-out;
+  font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+@keyframes modalOverlayFadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.demo-modal-panel {
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 24px;
+  max-width: 500px;
+  width: 100%;
+  box-shadow: 0 25px 60px -15px rgba(15, 23, 42, 0.25), 0 0 0 1px rgba(15, 23, 42, 0.05);
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  animation: modalSlideUp 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@keyframes modalSlideUp {
+  from {
+    opacity: 0;
+    transform: translateY(16px) scale(0.98);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+/* Modal Close Button */
+.demo-modal-close {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: #f1f5f9;
+  border: 1px solid #e2e8f0;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #64748b;
+  transition: all 0.2s ease;
+  z-index: 10;
+}
+
+.demo-modal-close:hover {
+  background: #e2e8f0;
+  color: #0f172a;
+  transform: scale(1.05);
+}
+
+/* Modal Header — Clean White Background Compact */
+.demo-modal-header {
+  background: #ffffff;
+  padding: 1.5rem 1.75rem 0.5rem;
+  position: relative;
+}
+
+.demo-modal-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  background: #FFF3EF;
+  border: 1px solid #FFD5C2;
+  border-radius: 100px;
+  padding: 3px 10px;
+  font-size: 0.68rem;
+  font-weight: 700;
+  color: #FF4C00;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  margin-bottom: 0.5rem;
+}
+
+.demo-modal-title {
+  font-size: 1.45rem;
+  font-weight: 800;
+  color: #0f172a;
+  line-height: 1.18;
+  letter-spacing: -0.03em;
+  margin-bottom: 0.25rem;
+}
+
+.demo-modal-subtitle {
+  font-size: 0.82rem;
+  font-weight: 400;
+  color: #64748b;
+  line-height: 1.4;
+}
+
+/* Modal Body */
+.demo-modal-body {
+  padding: 1rem 1.75rem 1.5rem;
+}
+
+/* Form inputs & labels */
+.demo-modal-label {
+  display: block;
+  font-size: 0.68rem;
+  font-weight: 700;
+  color: #334155;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 0.3rem;
+}
+
+.demo-modal-input,
+.demo-modal-select {
+  width: 100%;
+  padding: 8px 12px;
+  background: #ffffff;
+  border: 1px solid #cbd5e1;
+  border-radius: 12px;
+  font-size: 0.85rem;
+  font-weight: 400;
+  color: #0f172a;
+  font-family: 'Inter', system-ui, sans-serif;
+  transition: all 0.2s ease;
+  outline: none;
+}
+
+.demo-modal-input:focus,
+.demo-modal-select:focus {
+  border-color: #FF4C00;
+  box-shadow: 0 0 0 3px rgba(255, 76, 0, 0.15);
+}
+
+.demo-modal-input::placeholder {
+  color: #94a3b8;
+}
+
+/* Submit Button */
+.demo-modal-btn {
+  width: 100%;
+  padding: 12px 20px;
+  background: #FF4C00;
+  color: #ffffff;
+  border: none;
+  border-radius: 100px;
+  font-size: 0.92rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-family: 'Inter', system-ui, sans-serif;
+  box-shadow: 0 6px 20px -3px rgba(255, 76, 0, 0.3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+.demo-modal-btn:hover {
+  background: #DE3700;
+  transform: translateY(-1px);
+  box-shadow: 0 10px 25px -3px rgba(255, 76, 0, 0.4);
+}
+
+@media (max-width: 640px) {
+  .demo-modal-panel {
+    border-radius: 20px;
+  }
+  .demo-modal-header {
+    padding: 1.25rem 1.25rem 0.4rem;
+  }
+  .demo-modal-body {
+    padding: 0.85rem 1.25rem 1.25rem;
+  }
+  .demo-modal-title {
+    font-size: 1.3rem;
+  }
+}

@@ -1,0 +1,827 @@
+/* =============================================
+   TrustBar.css — Toast POS 2nd Section
+   "Get busy. Stay busy. Run busy."
+   Brand Logo Ticker + Interactive Cards
+   ============================================= */
+
+.toast-trustbar-section {
+  background: #ffffff;
+  padding: 2.5rem 0 3.5rem;
+  position: relative;
+  border-bottom: 1px solid #f0ebe8;
+}
+
+.toast-trustbar-inner {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+/* ============================================================
+   1. TOAST BRAND TICKER (With Interactive Hover Popups)
+   ============================================================ */
+.toast-brand-ticker-container {
+  overflow: visible;
+  width: 100%;
+  position: relative;
+  padding: 2.75rem 0;
+  border-bottom: 1px solid #f0ebe8;
+  margin-bottom: 3.5rem;
+  mask-image: linear-gradient(90deg, transparent 0%, black 6%, black 94%, transparent 100%);
+  -webkit-mask-image: linear-gradient(90deg, transparent 0%, black 6%, black 94%, transparent 100%);
+}
+
+.toast-brand-ticker-track {
+  display: flex;
+  gap: 60px;
+  width: max-content;
+  align-items: center;
+  animation: toastBrandTicker 35s linear infinite;
+  padding: 10px 0;
+}
+
+.toast-brand-ticker-container:hover .toast-brand-ticker-track {
+  animation-play-state: paused;
+}
+
+@keyframes toastBrandTicker {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-33.333%); }
+}
+
+.toast-brand-logo-item {
+  position: relative;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 16px;
+  transition: all 0.25s ease;
+  user-select: none;
+  z-index: 1;
+}
+
+.toast-brand-logo-item.is-hovered,
+.toast-brand-logo-item:hover {
+  z-index: 60;
+}
+
+/* Brand Logo Display Typography */
+.toast-brand-logo-display {
+  font-size: 1.15rem;
+  font-weight: 800;
+  color: #1a1918;
+  opacity: 0.75;
+  letter-spacing: -0.02em;
+  white-space: nowrap;
+  transition: opacity 0.25s ease, transform 0.25s ease;
+}
+
+.toast-brand-logo-item:hover .toast-brand-logo-display,
+.toast-brand-logo-item.is-hovered .toast-brand-logo-display {
+  opacity: 0.2;
+}
+
+.brand-french-laundry {
+  font-family: serif;
+  letter-spacing: 0.12em;
+  font-size: 1.1rem;
+}
+.brand-french-laundry .bold-letter {
+  font-size: 1.35rem;
+  font-weight: 900;
+}
+
+.brand-mendocino {
+  font-family: system-ui, sans-serif;
+  font-weight: 700;
+  color: #0284C7;
+}
+.brand-mendocino .small-farms {
+  font-size: 0.85rem;
+  color: #0369A1;
+}
+
+.brand-varsity {
+  color: #dc2626;
+  font-family: impact, sans-serif;
+  letter-spacing: 0.08em;
+  font-size: 1.3rem;
+}
+
+.brand-marea {
+  font-family: cursive, serif;
+  font-size: 1.35rem;
+  font-style: italic;
+}
+.marea-sub {
+  font-size: 0.55rem;
+  display: block;
+  font-style: normal;
+  letter-spacing: 0.15em;
+  text-align: center;
+}
+
+.brand-trick-dog {
+  font-family: 'Courier New', monospace;
+  font-weight: 900;
+  letter-spacing: 0.15em;
+  font-size: 1.25rem;
+}
+
+.brand-ushg {
+  font-size: 0.88rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-align: center;
+}
+.ushg-sub {
+  display: block;
+  font-size: 0.62rem;
+  color: #78716c;
+}
+
+.brand-hh {
+  font-weight: 900;
+  letter-spacing: 0.05em;
+}
+.hh-sub {
+  font-size: 0.72rem;
+  color: #8c8680;
+}
+
+.brand-giordanos {
+  font-family: 'Brush Script MT', cursive;
+  font-size: 1.45rem;
+  font-weight: 700;
+}
+
+.brand-hungry-howies {
+  font-weight: 900;
+  letter-spacing: -0.02em;
+}
+
+.brand-alinea {
+  letter-spacing: 0.18em;
+  font-size: 0.95rem;
+  font-weight: 700;
+}
+
+.brand-canlis {
+  font-family: serif;
+  letter-spacing: 0.28em;
+  font-size: 1.15rem;
+  font-weight: 700;
+}
+
+.brand-zabars {
+  font-family: impact, sans-serif;
+  letter-spacing: 0.08em;
+  font-size: 1.25rem;
+  font-weight: 800;
+}
+
+/* Dim other logos when one is hovered (Toast POS effect) */
+.toast-brand-ticker-track.has-hover .toast-brand-logo-item:not(.is-hovered) {
+  opacity: 0.35;
+  filter: grayscale(0.85);
+}
+
+/* Hover Popup Tooltip Card (Toast POS exact design - Centered on the logo where the cursor is) */
+.toast-logo-hover-card {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0.92);
+  background: #ffffff;
+  border-radius: 18px;
+  padding: 18px 28px;
+  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.12), 0 4px 14px rgba(0, 0, 0, 0.05);
+  border: 1px solid #e8e3df;
+  text-align: center;
+  min-width: 220px;
+  white-space: nowrap;
+  pointer-events: none;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.22s cubic-bezier(0.16, 1, 0.3, 1), transform 0.22s cubic-bezier(0.16, 1, 0.3, 1), visibility 0.22s;
+  z-index: 100;
+}
+
+.toast-brand-logo-item:hover .toast-logo-hover-card,
+.toast-brand-logo-item.is-hovered .toast-logo-hover-card,
+.toast-logo-hover-card.show {
+  opacity: 1;
+  visibility: visible;
+  transform: translate(-50%, -50%) scale(1);
+}
+
+.toast-logo-hover-name {
+  font-size: 0.68rem;
+  font-weight: 700;
+  color: #737373;
+  text-transform: uppercase;
+  letter-spacing: 0.09em;
+  margin-bottom: 5px;
+}
+
+.toast-logo-hover-tagline {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: #1a1918;
+  line-height: 1.25;
+  letter-spacing: -0.02em;
+}
+
+/* ============================================================
+   2. HEADER: Headlines + Segmented Switch Toggle
+   ============================================================ */
+.toast-trustbar-header {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 2rem;
+  margin-bottom: 2.25rem;
+  flex-wrap: wrap;
+}
+
+.toast-trustbar-main-headline {
+  font-size:2.5rem;
+  font-weight: 700;
+  color: #0D1117;
+  letter-spacing: -0.035em;
+  line-height: 1.1;
+  margin-bottom: 0.5rem;
+}
+
+.toast-trustbar-sub-headline {
+  font-size: 1.15rem;
+  color: #565352;
+  font-weight: 400;
+  line-height: 1.4;
+  margin: 0;
+}
+
+/* Segmented Toggle */
+.toast-segmented-toggle {
+  display: inline-flex;
+  align-items: center;
+  background: #f4eee9;
+  border-radius: 100px;
+  padding: 4px;
+  gap: 4px;
+}
+
+.toast-toggle-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 22px;
+  border-radius: 100px;
+  border: none;
+  background: transparent;
+  font-size: 0.92rem;
+  font-weight: 700;
+  color: #6b645f;
+  cursor: pointer;
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  font-family: inherit;
+}
+
+.toast-toggle-btn:hover {
+  color: #1a1918;
+}
+
+.toast-toggle-btn.active {
+  background: #FF8C00;
+  color: #ffffff;
+  box-shadow: 0 4px 14px rgba(222, 55, 0, 0.28);
+}
+
+/* ============================================================
+   3. 8 COMPACT SHOWCASE CARDS (Toast POS exact 4x2 Grid)
+   ============================================================ */
+.toast-cards-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.25rem;
+}
+
+@media (max-width: 1100px) {
+  .toast-cards-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.15rem;
+  }
+}
+
+@media (max-width: 640px) {
+  .toast-cards-grid {
+    grid-template-columns: 1fr;
+    gap: 1.15rem;
+  }
+}
+
+/* Compact 380px Card with Full-Bleed Media & 3D Parallax */
+.toast-feature-card {
+  background: #C83803;
+  border-radius: 26px;
+  overflow: hidden;
+  position: relative;
+  height: 380px;
+  min-height: 380px;
+  max-height: 380px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 0;
+  box-shadow: 0 12px 28px -8px rgba(0, 0, 0, 0.18);
+  cursor: pointer;
+  transition: transform 0.2s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  isolation: isolate;
+  transform-style: preserve-3d;
+  will-change: transform, box-shadow;
+}
+
+/* Card Hover Elevation & Warm Glow */
+.toast-feature-card:hover,
+.toast-feature-card.is-hovered {
+  box-shadow: 0 24px 50px -10px rgba(200, 56, 3, 0.55), 0 0 28px rgba(255, 76, 0, 0.25);
+}
+
+/* Ambient Cursor Spotlight Glow */
+.toast-card-spotlight {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  border-radius: 26px;
+  z-index: 4;
+  transition: opacity 0.25s ease;
+  mix-blend-mode: screen;
+}
+
+/* Hover Arrow Pop Badge */
+.toast-card-arrow-badge {
+  position: absolute;
+  top: 1.15rem;
+  right: 1.15rem;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: #ffffff;
+  color: #FF8C00;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 12;
+  opacity: 0;
+  transform: scale(0.6) translateZ(20px);
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.28);
+}
+
+.toast-feature-card:hover .toast-card-arrow-badge,
+.toast-feature-card.is-hovered .toast-card-arrow-badge {
+  opacity: 1;
+  transform: scale(1) translateZ(20px);
+}
+
+/* Full-Bleed Card Media Wrapper */
+.toast-card-media-wrapper {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 26px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #C83803;
+  z-index: 1;
+}
+
+.toast-card-bg-gradient {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at center, rgba(255, 255, 255, 0.1) 0%, transparent 70%);
+  pointer-events: none;
+  z-index: 2;
+}
+
+/* Multi-Image Layer Stack with Vertical Slide from Bottom to Top */
+.toast-card-img-layer {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.45s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.45s cubic-bezier(0.16, 1, 0.3, 1);
+  pointer-events: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.toast-card-img {
+  object-fit: cover !important;
+  transition: transform 0.45s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Card Footer Text - Positioned at bottom with warm dark gradient overlay */
+.toast-card-footer {
+  position: relative;
+  z-index: 10;
+  width: 100%;
+  padding: 3.5rem 1.25rem 1.4rem;
+  background: linear-gradient(180deg, transparent 0%, rgba(130, 32, 0, 0.88) 42%, rgba(100, 24, 0, 0.98) 100%);
+  text-align: center;
+  border-bottom-left-radius: 26px;
+  border-bottom-right-radius: 26px;
+}
+
+.toast-card-title {
+  font-size: 1.18rem;
+  font-weight: 800;
+  color: #ffffff;
+  margin-bottom: 0.3rem;
+  letter-spacing: -0.02em;
+  line-height: 1.2;
+}
+
+.toast-card-subtitle {
+  font-size: 0.82rem;
+  color: rgba(255, 255, 255, 0.92);
+  line-height: 1.35;
+  margin: 0;
+  font-weight: 400;
+ 
+}
+
+/* ============================================================
+   FLOATING INTERACTIVE WIDGETS
+   ============================================================ */
+
+/* Toast IQ Restaurant Widget */
+.toast-widget-iq {
+  position: absolute;
+  top: 38%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 90%;
+  background: #ffffff;
+  border-radius: 14px;
+  padding: 10px 12px;
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.25);
+  z-index: 6;
+  transition: transform 0.3s ease;
+}
+
+.toast-feature-card:hover .toast-widget-iq {
+  transform: translate(-50%, -52%) scale(1.02);
+}
+
+.toast-widget-iq-header {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 0.65rem;
+  font-weight: 700;
+  color: #1a1918;
+  margin-bottom: 6px;
+}
+
+.toast-widget-iq-content {
+  background: #fdfaf8;
+  border: 1px solid #f0ebe8;
+  border-radius: 8px;
+  padding: 5px 8px;
+  font-size: 0.65rem;
+  margin-bottom: 6px;
+}
+
+.toast-widget-iq-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 2px 0;
+  color: #8c8680;
+  font-size: 0.62rem;
+  font-weight: 600;
+}
+
+.toast-widget-iq-row.val {
+  color: #1a1918;
+  font-weight: 700;
+  font-size: 0.68rem;
+}
+
+.stock-tag {
+  background: #FF4C00;
+  color: #ffffff;
+  border-radius: 100px;
+  padding: 1px 6px;
+  font-size: 0.6rem;
+  font-weight: 700;
+}
+
+.toast-widget-save-btn {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  padding: 5px 0;
+  background: #1a1918;
+  color: #ffffff;
+  border: none;
+  border-radius: 6px;
+  font-size: 0.65rem;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+/* Online Ordering Notification Widget */
+.toast-widget-notification {
+  position: absolute;
+  top: 38%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 90%;
+  background: #ffffff;
+  border-radius: 16px;
+  padding: 10px 12px;
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.25);
+  display: flex;
+  gap: 8px;
+  align-items: flex-start;
+  z-index: 5;
+  transition: transform 0.3s ease;
+}
+
+.toast-feature-card:hover .toast-widget-notification {
+  transform: translate(-50%, -40%) scale(1.02);
+}
+
+.toast-widget-notification-icon {
+  width: 28px;
+  height: 28px;
+  border-radius: 8px;
+  background: #25D366;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.toast-widget-notification-content {
+  flex: 1;
+}
+
+.toast-widget-notification-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 2px;
+}
+
+.toast-widget-app-name {
+  font-size: 0.7rem;
+  font-weight: 800;
+  color: #1a1918;
+}
+
+.toast-widget-time {
+  font-size: 0.6rem;
+  color: #8c8680;
+}
+
+.toast-widget-msg {
+  font-size: 0.65rem;
+  color: #4a4541;
+  line-height: 1.3;
+  margin: 0;
+  font-weight: 500;
+}
+
+/* Loyalty Points Widget */
+.toast-widget-loyalty {
+  position: absolute;
+  top: 38%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 82%;
+  background: #ffffff;
+  border-radius: 16px;
+  padding: 14px 12px;
+  text-align: center;
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.25);
+  z-index: 5;
+  transition: transform 0.3s ease;
+}
+
+.toast-feature-card:hover .toast-widget-loyalty {
+  transform: translate(-50%, -40%) scale(1.02);
+}
+
+.toast-loyalty-badge {
+  font-size: 0.65rem;
+  font-weight: 700;
+  color: #2563eb;
+  margin-bottom: 2px;
+}
+
+.toast-loyalty-pts {
+  font-size: 1.35rem;
+  font-weight: 800;
+  color: #1a1918;
+  letter-spacing: -0.02em;
+}
+
+.toast-loyalty-sub {
+  font-size: 0.7rem;
+  font-weight: 500;
+  color: #8c8680;
+  margin-top: 2px;
+}
+
+/* Integrations Stack Widget */
+.toast-widget-integrations {
+  position: absolute;
+  top: 38%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 88%;
+  background: #ffffff;
+  border-radius: 16px;
+  padding: 10px 12px;
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.25);
+  z-index: 5;
+  transition: transform 0.3s ease;
+}
+
+.toast-feature-card:hover .toast-widget-integrations {
+  transform: translate(-50%, -40%) scale(1.02);
+}
+
+.toast-int-tag {
+  display: inline-block;
+  background: #06C167;
+  color: #ffffff;
+  font-size: 0.65rem;
+  font-weight: 800;
+  padding: 2px 6px;
+  border-radius: 5px;
+  margin-bottom: 4px;
+}
+
+.toast-int-text {
+  font-size: 0.65rem;
+  color: #4a4541;
+  line-height: 1.3;
+  margin: 0 0 6px;
+  font-weight: 500;
+}
+
+.toast-int-btn {
+  display: inline-block;
+  background: #1a1918;
+  color: #ffffff;
+  font-size: 0.65rem;
+  font-weight: 700;
+  padding: 3px 10px;
+  border-radius: 5px;
+}
+
+/* Toast Retail Phone Scanner */
+.toast-widget-phone-scan {
+  position: absolute;
+  top: 38%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 78%;
+  background: rgba(0, 0, 0, 0.85);
+  border: 1.5px solid rgba(255, 255, 255, 0.3);
+  border-radius: 16px;
+  padding: 16px 12px;
+  text-align: center;
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.35);
+  z-index: 5;
+}
+
+.toast-phone-scanner-line {
+  width: 100%;
+  height: 2px;
+  background: #FF4C00;
+  box-shadow: 0 0 8px #FF4C00;
+  margin-bottom: 8px;
+  animation: scanLaser 1.8s ease-in-out infinite alternate;
+}
+
+@keyframes scanLaser {
+  0% { transform: translateY(-8px); }
+  100% { transform: translateY(8px); }
+}
+
+.toast-phone-barcode-badge {
+  color: #ffffff;
+  font-size: 0.68rem;
+  font-weight: 700;
+}
+
+/* Toast IQ Retail Prompt List */
+.toast-widget-iq-retail {
+  position: absolute;
+  top: 38%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 88%;
+  background: #ffffff;
+  border-radius: 14px;
+  padding: 8px 10px;
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.25);
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  z-index: 5;
+}
+
+.toast-iq-prompt-item {
+  background: #fbf7f4;
+  border: 1px solid #f0ebe8;
+  border-radius: 6px;
+  padding: 4px 8px;
+  font-size: 0.62rem;
+  font-weight: 600;
+  color: #1a1918;
+  line-height: 1.25;
+}
+
+/* Catering Invoice Widget */
+.toast-widget-catering {
+  position: absolute;
+  top: 38%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 84%;
+  background: #ffffff;
+  border-radius: 14px;
+  padding: 10px 12px;
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.25);
+  z-index: 5;
+}
+
+.toast-catering-top {
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid #f0ebe8;
+  padding-bottom: 4px;
+  margin-bottom: 4px;
+  font-size: 0.65rem;
+  color: #8c8680;
+}
+
+.toast-catering-top strong {
+  color: #1a1918;
+}
+
+.toast-catering-row {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.65rem;
+  color: #4a4541;
+  margin-bottom: 6px;
+}
+
+.toast-catering-total {
+  display: flex;
+  justify-content: space-between;
+  border-top: 1px dashed #e8e2de;
+  padding-top: 4px;
+  font-size: 0.68rem;
+  color: #1a1918;
+}
+
+/* ============================================================
+   CARD FOOTER TEXT
+   ============================================================ */
+.toast-card-footer {
+  text-align: center;
+  padding: 0 0.25rem;
+}
+
+.toast-card-title {
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: #ffffff;
+  letter-spacing: -0.02em;
+  margin-bottom: 25px;
+  line-height: 1.15;
+}
+
+.toast-card-subtitle {
+  font-size: 0.84rem;
+  color: rgba(255, 255, 255, 0.9);
+  font-weight: 400;
+  line-height: 1.35;
+  margin: 0;
+  margin-bottom: 24px;
+}

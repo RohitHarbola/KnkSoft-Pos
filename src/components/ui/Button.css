@@ -1,0 +1,164 @@
+/* =============================================
+   Button.css — Toast POS-inspired Button
+   ============================================= */
+
+/* Base button reset */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  border: none;
+  border-radius: 100px;
+  font-family: 'Inter', system-ui, sans-serif;
+  font-weight: 700;
+  cursor: pointer;
+  text-decoration: none;
+  white-space: nowrap;
+  transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease,
+              transform 0.15s ease, box-shadow 0.2s ease, opacity 0.2s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.btn:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+/* Sizes */
+.btn-sm {
+  font-size: 0.8rem;
+  padding: 8px 18px;
+}
+
+.btn-md {
+  font-size: 0.925rem;
+  padding: 12px 26px;
+}
+
+.btn-lg {
+  font-size: 1rem;
+  padding: 15px 34px;
+}
+
+/* Variants */
+
+/* Primary: Toast orange */
+.btn-primary {
+  background: #FF4C00;
+  color: #ffffff;
+  border: 1.5px solid transparent;
+}
+
+.btn-primary:hover:not(:disabled) {
+  background: #DE3700;
+  transform: translateY(-1px);
+  box-shadow: 0 6px 24px rgba(255, 76, 0, 0.35);
+}
+
+.btn-primary:active:not(:disabled) {
+  transform: translateY(0);
+  box-shadow: none;
+}
+
+/* Secondary: outline */
+.btn-secondary {
+  background: transparent;
+  color: #D4340B;
+  border: 1.5px solid #D4340B;
+}
+
+.btn-secondary:hover:not(:disabled) {
+  background: #D4340B;
+  color: #ffffff;
+  transform: translateY(-1px);
+}
+
+/* Ghost: subtle */
+.btn-ghost {
+  background: transparent;
+  color: #565352;
+  border: 1.5px solid #e8e2de;
+}
+
+.btn-ghost:hover:not(:disabled) {
+  background: #f3f0ee;
+  border-color: #d4cac4;
+  color: #1A1918;
+}
+
+/* Dark: dark bg for use on light sections */
+.btn-dark {
+  background: #1A1918;
+  color: #ffffff;
+  border: 1.5px solid transparent;
+}
+
+.btn-dark:hover:not(:disabled) {
+  background: #2d2b2a;
+  transform: translateY(-1px);
+}
+
+/* White: for dark backgrounds */
+.btn-white {
+  background: #ffffff;
+  color: #1A1918;
+  border: 1.5px solid transparent;
+}
+
+.btn-white:hover:not(:disabled) {
+  background: #f3f0ee;
+  transform: translateY(-1px);
+}
+
+/* Orange outline: for dark backgrounds */
+.btn-orange-outline {
+  background: transparent;
+  color: #FF4C00;
+  border: 1.5px solid #FF4C00;
+}
+
+.btn-orange-outline:hover:not(:disabled) {
+  background: #FF4C00;
+  color: #ffffff;
+}
+
+/* Icon-only circular button */
+.btn-icon {
+  width: 40px;
+  height: 40px;
+  padding: 0;
+  border-radius: 50%;
+}
+
+.btn-icon.btn-sm {
+  width: 32px;
+  height: 32px;
+}
+
+.btn-icon.btn-lg {
+  width: 52px;
+  height: 52px;
+}
+
+/* Loading spinner */
+.btn-loading {
+  pointer-events: none;
+}
+
+.btn-loading::after {
+  content: '';
+  position: absolute;
+  width: 16px;
+  height: 16px;
+  border: 2px solid rgba(255,255,255,0.35);
+  border-top-color: #ffffff;
+  border-radius: 50%;
+  animation: btnSpinner 0.7s linear infinite;
+}
+
+@keyframes btnSpinner {
+  to { transform: rotate(360deg); }
+}

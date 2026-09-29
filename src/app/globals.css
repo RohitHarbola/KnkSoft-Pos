@@ -1,0 +1,246 @@
+/* ─────────────────────────────────────────────
+   Individual Component CSS Imports
+   MUST come BEFORE @tailwind directives (CSS spec)
+   ───────────────────────────────────────────── */
+
+/* Layout components */
+@import '../components/layout/AnnouncementBar.css';
+@import '../components/layout/Header.css';
+@import '../components/layout/Footer.css';
+@import '../components/layout/DemoModal.css';
+@import '../components/layout/WhatsAppFloat.css';
+
+/* Section components */
+@import '../components/sections/Hero.css';
+@import '../components/sections/TrustBar.css';
+@import '../components/sections/ProductModules.css';
+@import '../components/sections/ProductUIShowcase.css';
+@import '../components/sections/Workflow.css';
+@import '../components/sections/Analytics.css';
+@import '../components/sections/IndustrySelector.css';
+@import '../components/sections/Integrations.css';
+@import '../components/sections/Hardware.css';
+@import '../components/sections/PricingPreview.css';
+@import '../components/sections/CaseStudies.css';
+@import '../components/sections/FAQ.css';
+@import '../components/sections/FinalCTA.css';
+
+/* UI components */
+@import '../components/ui/Button.css';
+@import '../components/ui/Badge.css';
+@import '../components/ui/Card.css';
+@import '../components/ui/Accordion.css';
+@import '../components/ui/KpiCard.css';
+@import '../components/ui/StatCard.css';
+
+/* Page templates */
+@import '../components/templates/IndustryPageTemplate.css';
+@import '../components/templates/ProductPageTemplate.css';
+
+/* ─────────────────────────────────────────────
+   Tailwind Directives (must come AFTER @import)
+   ───────────────────────────────────────────── */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Global Resets */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  font-family: var(--font-inter), system-ui, -apple-system, sans-serif;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Base Layer with CSS Variables */
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 210 20% 20%;
+    --card: 0 0% 100%;
+    --card-foreground: 210 20% 20%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 210 20% 20%;
+    --primary: 14 100% 50%; /* #FF4C00 Toast Orange */
+    --primary-foreground: 0 0% 100%;
+    --secondary: 210 20% 90%;
+    --secondary-foreground: 210 20% 20%;
+    --muted: 20 14% 96%;     /* #f9f5f3 warm light */
+    --muted-foreground: 20 10% 40%;
+    --accent: 14 100% 41%;
+    --accent-foreground: 0 0% 100%;
+    --destructive: 0 80% 50%;
+    --destructive-foreground: 0 0% 100%;
+    --success: 120 60% 45%;
+    --success-foreground: 0 0% 100%;
+    --border: 20 14% 90%;    /* #e8e2de warm border */
+    --input: 20 14% 96%;
+    --ring: 14 100% 50%;     /* orange focus ring */
+    --radius: 0.75rem;
+    --font-family: "Inter", system-ui, -apple-system, sans-serif;
+
+    /* Toast POS Brand Colors as CSS vars */
+    --toast-orange: #FF4C00;
+    --toast-orange-dark: #DE3700;
+    --toast-dark: #0D1117;
+    --toast-dark-card: #1A2030;
+    --toast-text: #1A1918;
+    --toast-text-muted: #565352;
+    --toast-text-faint: #9b9089;
+    --toast-warm-bg: #f9f5f3;
+    --toast-warm-border: #e8e2de;
+  }
+
+  .dark {
+    --background: 222 47% 7%;
+    --foreground: 0 0% 98%;
+    --card: 222 47% 10%;
+    --card-foreground: 0 0% 98%;
+    --popover: 222 47% 10%;
+    --popover-foreground: 0 0% 98%;
+    --primary: 14 100% 50%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 222 20% 20%;
+    --secondary-foreground: 0 0% 98%;
+    --muted: 222 20% 15%;
+    --muted-foreground: 0 0% 60%;
+    --accent: 14 100% 45%;
+    --accent-foreground: 0 0% 100%;
+    --destructive: 0 80% 55%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 222 20% 18%;
+    --input: 222 20% 15%;
+    --ring: 14 100% 50%;
+    --radius: 0.75rem;
+  }
+}
+
+/* Components Layer */
+@layer components {
+  .nav-container {
+    @apply fixed w-full top-0 z-50 bg-white border-b border-[#e8e2de];
+  }
+
+  .nav-link {
+    @apply relative text-[#252525] font-medium tracking-wide hover:text-[#FF4C00] transition-colors duration-200;
+  }
+
+  .text-gradient {
+    background: linear-gradient(135deg, #FF4C00, #FF8A50);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .container {
+    @apply mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl;
+  }
+
+  .section-heading {
+    @apply text-3xl sm:text-4xl font-bold tracking-tight xl:text-[2.5rem];
+  }
+
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+/* Utilities */
+@layer utilities {
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* High Contrast Focus States */
+:focus-visible {
+  outline: 3px solid #FF4C00;
+  outline-offset: 2px;
+}
+
+/* ============================================================
+   TYPOGRAPHY OVERRIDES — Toast POS style
+   Applied across all pages and components
+   ============================================================ */
+
+/* Headings: text-3xl sm:text-4xl font-bold tracking-tight xl:text-[2.5rem] */
+h1, h2, section h1, main h1, section h2, main h2, .section-heading, .heading {
+  font-size: 1.875rem; /* text-3xl */
+  line-height: 2.25rem;
+  font-weight: 700;    /* font-bold */
+  letter-spacing: -0.025em; /* tracking-tight */
+}
+
+@media (min-width: 640px) {
+  h1, h2, section h1, main h1, section h2, main h2, .section-heading, .heading {
+    font-size: 2.25rem; /* sm:text-4xl */
+    line-height: 2.5rem;
+  }
+}
+
+@media (min-width: 1280px) {
+  h1, h2, section h1, main h1, section h2, main h2, .section-heading, .heading {
+    font-size: 2.5rem; /* xl:text-[2.5rem] */
+    line-height: 1.15;
+  }
+}
+
+section h3, main h3, h3 {
+  font-size: clamp(1.1rem, 2vw, 1.5rem);
+  font-weight: 700;
+  line-height: 1.3;
+}
+
+/* Descriptive paragraphs: lightweight (font-thin) */
+section p, main p {
+  font-size: 1rem;
+  font-weight: 300;
+  line-height: 1.7;
+}
+
+@media (min-width: 1024px) {
+  section p, main p {
+    font-size: 1.05rem;
+  }
+}
+
+/* Accessibility */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+}

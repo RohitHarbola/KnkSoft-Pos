@@ -1,0 +1,348 @@
+/* =============================================
+   ProductModules.css — Toast POS "Designed for what happens mid-shift"
+   Scroll-Pinned Sticky Showcase Section
+   ============================================= */
+
+/* ============================================================
+   TALL SCROLL TRACK (Pins the card while user scrolls)
+   ============================================================ */
+.product-modules-scroll-track {
+  position: relative;
+  height: 110vh;
+  min-height: 550px;
+  background: #fbf7f4;
+  padding: 2rem 0 0;
+  margin-bottom: 0;
+}
+
+/* ============================================================
+   STICKY PIN CONTAINER (Locks in viewport during scroll)
+   ============================================================ */
+.midshift-sticky-pin {
+  position:sticky;
+  top: 80px;
+  height: auto;
+  min-height: auto;
+  max-height: none;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  width: 100%;
+  padding: 0;
+  margin: 0;
+}
+
+.product-modules-inner {
+  max-width: 1280px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+/* ============================================================
+   OUTER CONTAINER — Toast POS Rounded White Card
+   ============================================================ */
+.midshift-container {
+  background: #ffffff;
+  border: 1px solid #eae5e1;
+  border-radius: 44px;
+  padding: 3.25rem 3.5rem;
+  display: grid;
+  grid-template-columns: 1fr 1.15fr;
+  gap: 3.5rem;
+  align-items: center;
+  box-shadow: 0 20px 60px -15px rgba(0, 0, 0, 0.04);
+  position: relative;
+  width: 100%;
+}
+
+@media (max-width: 1024px) {
+  .product-modules-scroll-track {
+    height: auto;
+    min-height: auto;
+    padding: 3.5rem 0;
+  }
+
+  .midshift-sticky-pin {
+    position: relative;
+    top: 0;
+    height: auto;
+    min-height: auto;
+    max-height: none;
+    padding: 0;
+  }
+
+  .midshift-container {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+    padding: 2.5rem 1.75rem;
+    border-radius: 32px;
+  }
+}
+
+/* ============================================================
+   LEFT COLUMN: Header + Vertical Feature Sliding List
+   ============================================================ */
+.midshift-left-col {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.midshift-header {
+  margin-bottom: 1.5rem;
+}
+
+.product-modules-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: #FFF3EF;
+  border: 1px solid #FFD5C2;
+  border-radius: 100px;
+  padding: 5px 14px;
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: #FF4C00;
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+  margin-bottom: 0.85rem;
+}
+
+.product-modules-title {
+  font-size: clamp(1.85rem, 2.7vw, 2.5rem);
+  font-weight: 700;
+  color: #1a1918;
+  line-height: 1.15;
+  letter-spacing: -0.03em;
+  margin-bottom: 0.75rem;
+}
+
+.product-modules-subtitle {
+  font-size: 1.05rem;
+  font-weight: 400;
+  color: #565352;
+  line-height: 1.55;
+  max-width: 480px;
+}
+
+/* Toast POS Sliding Viewport */
+.midshift-nav-viewport {
+  height: 310px;
+  overflow: hidden;
+  position: relative;
+  margin-top: 0.5rem;
+  mask-image: linear-gradient(180deg, black 75%, transparent 100%);
+  -webkit-mask-image: linear-gradient(180deg, black 75%, transparent 100%);
+}
+
+@media (max-width: 1024px) {
+  .midshift-nav-viewport {
+    height: auto;
+    overflow: visible;
+    mask-image: none;
+    -webkit-mask-image: none;
+  }
+}
+
+/* Vertical Feature List */
+.midshift-nav-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.midshift-step-item {
+  padding: 0.35rem 0;
+  border: none;
+}
+
+.midshift-nav-item {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.45rem 0;
+  border: none;
+  background: transparent;
+  text-align: left;
+  cursor: pointer;
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  font-family: inherit;
+}
+
+.midshift-nav-label {
+  font-size: clamp(1.35rem, 1.85vw, 1.75rem);
+  font-weight: 700;
+  color: #c8c3bf;
+  opacity: 0.45;
+  letter-spacing: -0.025em;
+  line-height: 1.25;
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.midshift-nav-item:hover .midshift-nav-label {
+  color: #78716c;
+  opacity: 0.8;
+}
+
+/* Active State with Iconic Toast Orange Circle Arrow */
+.midshift-nav-item.active .midshift-nav-label {
+  color: #1a1918;
+  opacity: 1;
+}
+
+.midshift-nav-arrow {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 2px solid #FF4C00;
+  background: #ffffff;
+  color: #FF4C00;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  box-shadow: 0 4px 14px rgba(255, 76, 0, 0.15);
+  animation: midshiftArrowPop 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@keyframes midshiftArrowPop {
+  0% {
+    transform: scale(0.6);
+    opacity: 0;
+  }
+
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+/* ============================================================
+   RIGHT COLUMN: Fixed Image Frame
+   ============================================================ */
+.midshift-right-col {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+/* Fixed Image Frame Dimensions & Design */
+.midshift-image-frame {
+  position: relative;
+  width: 100%;
+  height: 500px;
+  min-height: 500px;
+  max-height: 500px;
+  border-radius: 38px;
+  overflow: hidden;
+  background: #000000;
+  box-shadow: 0 25px 65px -15px rgba(0, 0, 0, 0.35);
+  isolation: isolate;
+}
+
+@media (max-width: 1024px) {
+  .midshift-right-col {
+    order: -1;
+  }
+
+  .midshift-image-frame {
+    height: 380px;
+    min-height: 380px;
+    max-height: 380px;
+    border-radius: 28px;
+  }
+
+  .midshift-nav-label {
+    font-size: 1.35rem;
+  }
+}
+
+@media (max-width: 640px) {
+  .midshift-image-frame {
+    height: 320px;
+    min-height: 320px;
+    max-height: 320px;
+    border-radius: 22px;
+  }
+
+  .midshift-nav-arrow {
+    width: 36px;
+    height: 36px;
+  }
+}
+
+/* Stacked Image Layers with Smooth Crossfade */
+.midshift-image-layer {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  transition: opacity 0.4s cubic-bezier(0.16, 1, 0.3, 1), transform 0.45s cubic-bezier(0.16, 1, 0.3, 1);
+  transform: scale(0.98);
+  pointer-events: none;
+  z-index: 1;
+}
+
+.midshift-image-layer.is-active {
+  opacity: 1;
+  transform: scale(1);
+  pointer-events: auto;
+  z-index: 2;
+}
+
+.midshift-image {
+  object-fit: cover !important;
+  object-position: center !important;
+}
+
+/* Bottom Toast POS-Style Caption Banner Overlay */
+.midshift-caption-banner {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  padding: 1.75rem 2.25rem 1.75rem;
+  background: linear-gradient(180deg,
+      transparent 0%,
+      rgba(0, 0, 0, 0.55) 45%,
+      rgba(0, 0, 0, 0.88) 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  z-index: 4;
+}
+
+.midshift-caption-text {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #ffffff;
+  letter-spacing: -0.01em;
+  line-height: 1.45;
+  margin: 0;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.7);
+}
+
+/* ============================================================
+   MOBILE TUNING
+   ============================================================ */
+@media (max-width: 768px) {
+  .midshift-container {
+    padding: 2rem 1.5rem;
+  }
+
+  .midshift-header {
+    margin-bottom: 1.5rem;
+  }
+
+  .midshift-caption-banner {
+    padding: 1.25rem 1.5rem;
+  }
+
+  .midshift-caption-text {
+    font-size: 0.95rem;
+  }
+}

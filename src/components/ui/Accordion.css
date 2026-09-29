@@ -1,0 +1,76 @@
+/* =============================================
+   Accordion.css — Toast POS-inspired Accordion
+   ============================================= */
+
+.accordion-root {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.accordion-item {
+  background: #f9f5f3;
+  border: 1.5px solid #ece6e1;
+  border-radius: 14px;
+  overflow: hidden;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.accordion-item[data-state="open"] {
+  border-color: #FF4C00;
+  box-shadow: 0 4px 20px rgba(255, 76, 0, 0.08);
+}
+
+.accordion-trigger {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  width: 100%;
+  padding: 1.1rem 1.4rem;
+  background: none;
+  border: none;
+  font-family: 'Inter', system-ui, sans-serif;
+  font-size: 0.925rem;
+  font-weight: 600;
+  color: #1A1918;
+  line-height: 1.4;
+  cursor: pointer;
+  text-align: left;
+  transition: color 0.2s ease;
+}
+
+.accordion-trigger:hover {
+  color: #FF4C00;
+}
+
+.accordion-item[data-state="open"] .accordion-trigger {
+  color: #FF4C00;
+}
+
+.accordion-icon {
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  background: #ece6e1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  color: #565352;
+  transition: background-color 0.25s ease, color 0.25s ease, transform 0.3s ease;
+}
+
+.accordion-item[data-state="open"] .accordion-icon {
+  background: #FF4C00;
+  color: #ffffff;
+  transform: rotate(180deg);
+}
+
+.accordion-content {
+  padding: 0 1.4rem 1.25rem;
+  font-size: 0.875rem;
+  font-weight: 300;
+  color: #565352;
+  line-height: 1.7;
+}

@@ -1,0 +1,121 @@
+/* =============================================
+   KpiCard.css — KPI metric card
+   ============================================= */
+
+.kpi-card {
+  background: #ffffff;
+  border: 1.5px solid #e8e2de;
+  border-radius: 20px;
+  padding: 1.5rem;
+  transition: box-shadow 0.3s ease, border-color 0.3s ease, transform 0.2s ease;
+}
+
+.kpi-card:hover {
+  box-shadow: 0 8px 28px rgba(0, 0, 0, 0.07);
+  transform: translateY(-2px);
+}
+
+.kpi-card-dark {
+  background: #1A2030;
+  border-color: rgba(255, 255, 255, 0.06);
+  color: #ffffff;
+}
+
+.kpi-card-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 0.75rem;
+}
+
+.kpi-card-label {
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: #9b9089;
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+}
+
+.kpi-card-dark .kpi-card-label {
+  color: rgba(255, 255, 255, 0.45);
+}
+
+.kpi-card-icon {
+  width: 36px;
+  height: 36px;
+  border-radius: 10px;
+  background: #FFF3EF;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #FF4C00;
+  flex-shrink: 0;
+}
+
+.kpi-card-dark .kpi-card-icon {
+  background: rgba(255, 76, 0, 0.12);
+}
+
+.kpi-card-value {
+  font-size: 2rem;
+  font-weight: 800;
+  color: #1A1918;
+  letter-spacing: -0.04em;
+  line-height: 1;
+  margin-bottom: 0.35rem;
+}
+
+.kpi-card-dark .kpi-card-value {
+  color: #ffffff;
+}
+
+.kpi-card-change {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 0.78rem;
+  font-weight: 700;
+}
+
+.kpi-card-change.positive {
+  color: #25C45A;
+}
+
+.kpi-card-change.negative {
+  color: #EF4444;
+}
+
+.kpi-card-change-label {
+  font-weight: 400;
+  color: #9b9089;
+  font-size: 0.75rem;
+}
+
+/* Mini spark line  */
+.kpi-card-spark {
+  margin-top: 0.75rem;
+  height: 40px;
+  display: flex;
+  align-items: flex-end;
+  gap: 3px;
+}
+
+.kpi-card-spark-bar {
+  flex: 1;
+  background: #FFF3EF;
+  border-radius: 3px;
+  transition: height 0.5s ease;
+  min-height: 4px;
+}
+
+.kpi-card-spark-bar.active {
+  background: #FF4C00;
+}
+
+.kpi-card-dark .kpi-card-spark-bar {
+  background: rgba(255, 76, 0, 0.12);
+}
+
+.kpi-card-dark .kpi-card-spark-bar.active {
+  background: #FF4C00;
+}

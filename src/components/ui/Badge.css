@@ -1,0 +1,109 @@
+/* =============================================
+   Badge.css — Toast POS-inspired Badge component
+   ============================================= */
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  border-radius: 100px;
+  font-family: 'Inter', system-ui, sans-serif;
+  font-weight: 700;
+  line-height: 1;
+  white-space: nowrap;
+  letter-spacing: 0.03em;
+}
+
+/* Sizes */
+.badge-xs {
+  font-size: 0.65rem;
+  padding: 3px 8px;
+}
+
+.badge-sm {
+  font-size: 0.72rem;
+  padding: 4px 10px;
+}
+
+.badge-md {
+  font-size: 0.78rem;
+  padding: 5px 12px;
+}
+
+.badge-lg {
+  font-size: 0.85rem;
+  padding: 6px 14px;
+}
+
+/* Variants */
+
+/* Orange — primary brand */
+.badge-orange {
+  background: #FFF3EF;
+  color: #FF4C00;
+  border: 1px solid #FFD5C2;
+}
+
+/* Orange solid */
+.badge-orange-solid {
+  background: #FF4C00;
+  color: #ffffff;
+}
+
+/* Green — success/active */
+.badge-green {
+  background: #E8FBF0;
+  color: #1A8041;
+  border: 1px solid #BBF0D1;
+}
+
+/* Blue */
+.badge-blue {
+  background: #EFF6FF;
+  color: #1D4ED8;
+  border: 1px solid #BFDBFE;
+}
+
+/* Gray */
+.badge-gray {
+  background: #f3f0ee;
+  color: #565352;
+  border: 1px solid #e8e2de;
+}
+
+/* Dark */
+.badge-dark {
+  background: #1A1918;
+  color: #ffffff;
+}
+
+/* Red/alert */
+.badge-red {
+  background: #FEF2F2;
+  color: #DC2626;
+  border: 1px solid #FECACA;
+}
+
+/* Amber/warning */
+.badge-amber {
+  background: #FFFBEB;
+  color: #B45309;
+  border: 1px solid #FDE68A;
+}
+
+/* Pulse animation for live badge */
+.badge-live::before {
+  content: '';
+  display: inline-block;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: currentColor;
+  animation: badgeLivePulse 1.6s ease-in-out infinite;
+  flex-shrink: 0;
+}
+
+@keyframes badgeLivePulse {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.4; transform: scale(0.7); }
+}
