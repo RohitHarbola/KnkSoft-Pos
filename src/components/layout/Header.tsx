@@ -31,13 +31,9 @@ import {
   Zap,
   CheckCircle2,
   Video,
-  Sun,
-  Moon,
 } from 'lucide-react';
 import { KNKLogo } from '@/ui/KNKLogo';
 import { useDemoModal } from '@/context/DemoModalContext';
-import { useTheme } from '@/context/ThemeContext';
-import { ThemeToggle } from '@/components/ui/ThemeToggle';
 import './Header.css';
 
 export const Header: React.FC = () => {
@@ -45,7 +41,6 @@ export const Header: React.FC = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [activeDropdown, setActiveDropdown] = useState<'product' | 'industries' | 'resources' | null>(null);
   const [mobileExpandedTab, setMobileExpandedTab] = useState<'product' | 'industries' | 'resources' | null>(null);
-  const { isDark: isDarkMode } = useTheme();
   const { openDemoModal } = useDemoModal();
   const pathname = usePathname();
   const navRef = useRef<HTMLDivElement>(null);
@@ -151,7 +146,7 @@ export const Header: React.FC = () => {
             <div className="flex items-center gap-6 xl:gap-8">
               {/* Logo */}
               <Link href="/" className="flex-shrink-0" onClick={() => setActiveDropdown(null)}>
-                <KNKLogo variant={isDarkMode ? 'light' : 'dark'} size="md" />
+                <KNKLogo variant="dark" size="md" />
               </Link>
 
               {/* Desktop Navigation Tabs */}
@@ -494,14 +489,10 @@ export const Header: React.FC = () => {
             </div>
 
             {/* Right Side Navigation & Action Button */}
-            <div className="hidden lg:flex items-center gap-3 text-[14px] font-semibold text-slate-800 dark:text-slate-200">
-
-              {/* Theme Toggle Button (Light/Dark) */}
-              {/* <ThemeToggle size="md" /> */}
-
+            <div className="hidden lg:flex items-center gap-3 text-[14px] font-semibold text-slate-800">
               <Link
                 href="/contact"
-                className="text-xs font-semibold text-slate-700 dark:text-slate-300 hover:text-[#FF4C00] dark:hover:text-[#FF4C00] transition-colors flex items-center gap-1.5 px-3 py-1.5 rounded-full hover:bg-orange-50/50 dark:hover:bg-slate-800"
+                className="text-xs font-semibold text-slate-700 hover:text-[#FF4C00] transition-colors flex items-center gap-1.5 px-3 py-1.5 rounded-full hover:bg-orange-50/50"
               >
                 <LogIn className="w-3.5 h-3.5" />
                 <span>Login</span>
@@ -517,9 +508,8 @@ export const Header: React.FC = () => {
               </button>
             </div>
 
-            {/* Mobile Hamburger toggle & Theme Switcher */}
-            {/* <div className="flex lg:hidden items-center gap-2">
-              <ThemeToggle size="sm" />
+            {/* Mobile Hamburger toggle & Demo */}
+            <div className="flex lg:hidden items-center gap-2">
               <button
                 type="button"
                 onClick={() => openDemoModal()}
@@ -530,12 +520,12 @@ export const Header: React.FC = () => {
               <button
                 type="button"
                 onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-                className="p-1.5 rounded-lg text-slate-800 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors cursor-pointer"
+                className="p-1.5 rounded-lg text-slate-800 hover:bg-slate-100 transition-colors cursor-pointer"
                 aria-label="Toggle navigation menu"
               >
                 {isMobileMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
               </button>
-            </div> */}
+            </div>
 
           </div>
         </div>
