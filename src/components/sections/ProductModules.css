@@ -346,3 +346,49 @@
     font-size: 0.95rem;
   }
 }
+
+/* =============================================
+   Dark Mode Overrides for ProductModules
+   ============================================= */
+.dark .product-modules-scroll-track {
+  background: #0B0F17 !important;
+}
+
+.dark .midshift-container {
+  background: #111723 !important;
+  border-color: #1E293B !important;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5) !important;
+}
+
+.dark .product-modules-eyebrow {
+  background: rgba(255, 76, 0, 0.15) !important;
+  border-color: rgba(255, 76, 0, 0.3) !important;
+  color: #FF7A3D !important;
+}
+
+.dark .product-modules-title {
+  color: #F8FAFC !important;
+}
+
+.dark .product-modules-subtitle {
+  color: #94A3B8 !important;
+}
+
+.dark .midshift-nav-item {
+  color: #94A3B8 !important;
+}
+
+.dark .midshift-nav-item:hover {
+  color: #F8FAFC !important;
+  background: #161F2E !important;
+}
+
+.dark .midshift-nav-item.active {
+  background: #FF4C00 !important;
+  color: #ffffff !important;
+}
+
+.dark .midshift-image-card {
+  background: #0D121D !important;
+  border-color: #1E293B !important;
+}

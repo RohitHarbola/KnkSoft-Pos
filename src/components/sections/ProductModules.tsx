@@ -36,6 +36,13 @@ export const MODULES = [
     image: '/home/hp-vision3.png',
     caption: '100% accurate GST calculations, e-invoicing & 1-click filing exports.',
   },
+   {
+    id: 'Multi Store',
+    name: 'Multi-Store Management',
+    icon: ShieldCheck,
+    image: '/home/hp-vision3.png',
+    caption: 'Seamless management of multiple locations with centralized control and reporting.',
+  },
   {
     id: 'payments',
     name: 'UPI & Multi-Mode',

@@ -216,3 +216,49 @@
   margin-top: 0.75rem;
   line-height: 1.5;
 }
+
+/* =============================================
+   Dark Mode Overrides for IndustrySelector
+   ============================================= */
+.dark .industry-selector-section {
+  background: #0A0D14 !important;
+}
+
+.dark .industry-selector-title {
+  color: #F8FAFC !important;
+}
+
+.dark .industry-selector-subtitle {
+  color: #94A3B8 !important;
+}
+
+.dark .industry-tab-btn {
+  background: #111723 !important;
+  border-color: #1E293B !important;
+  color: #94A3B8 !important;
+}
+
+.dark .industry-tab-btn.active {
+  background: #FF4C00 !important;
+  color: #ffffff !important;
+  border-color: #FF4C00 !important;
+}
+
+.dark .industry-card {
+  background: #111723 !important;
+  border-color: #1E293B !important;
+}
+
+.dark .industry-card-name {
+  color: #F8FAFC !important;
+}
+
+.dark .industry-card-desc {
+  color: #94A3B8 !important;
+}
+
+.dark .industry-card-feat-preview {
+  background: #161F2E !important;
+  color: #CBD5E1 !important;
+}
+

@@ -613,3 +613,64 @@
     font-size: 1.6rem;
   }
 }
+
+/* =============================================
+   Dark Mode Overrides for Hero.css
+   ============================================= */
+.dark .hero-section {
+  background: #0B0F17 !important;
+}
+
+.dark .hero-bg-dark-overlay {
+  background: linear-gradient(135deg, #0B0F17 0%, #111722 55%, #0B0F17 100%) !important;
+}
+
+.dark .hero-grid-pattern {
+  background-image: radial-gradient(rgba(255, 255, 255, 0.08) 1px, transparent 1px);
+}
+
+.dark .hero-headline {
+  color: #F8FAFC !important;
+}
+
+.dark .hero-description {
+  color: #94A3B8 !important;
+}
+
+.dark .hero-cta-secondary {
+  color: #F8FAFC !important;
+  border-color: rgba(255, 255, 255, 0.22) !important;
+}
+
+.dark .hero-cta-secondary:hover {
+  background: rgba(255, 255, 255, 0.08) !important;
+}
+
+.dark .hero-chip {
+  background: #161F2E !important;
+  color: #FED7AA !important;
+  border-color: rgba(255, 76, 0, 0.35) !important;
+}
+
+.dark .hero-trust-item {
+  color: #94A3B8 !important;
+}
+
+.dark .hero-screen-card {
+  border-color: #1E293B !important;
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.6) !important;
+}
+
+.dark .hero-kpi-badge {
+  background: #151D2C !important;
+  border-color: #1E293B !important;
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.45) !important;
+}
+
+.dark .hero-kpi-value {
+  color: #F8FAFC !important;
+}
+
+.dark .hero-kpi-label {
+  color: #94A3B8 !important;
+}

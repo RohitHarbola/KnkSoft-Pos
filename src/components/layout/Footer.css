@@ -103,3 +103,47 @@
   color: #ffffff;
   transform: translateY(-2px);
 }
+
+/* =============================================
+   Dark Mode Overrides for Footer.css
+   ============================================= */
+.dark .footer-root {
+  background: #0B0F17 !important;
+  color: #94A3B8 !important;
+  border-top-color: #1E293B !important;
+}
+
+.dark .footer-cta-banner {
+  background: #131926 !important;
+  border-color: #1E293B !important;
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.4) !important;
+}
+
+.dark .footer-cta-banner:hover {
+  border-color: rgba(255, 76, 0, 0.4) !important;
+}
+
+.dark .footer-heading {
+  color: #F8FAFC !important;
+}
+
+.dark .footer-link {
+  color: #94A3B8 !important;
+}
+
+.dark .footer-link:hover {
+  color: #FF4C00 !important;
+}
+
+.dark .footer-social-btn {
+  background: #1E293B !important;
+  border-color: #334155 !important;
+  color: #94A3B8 !important;
+}
+
+.dark .footer-social-btn:hover {
+  background: #FF4C00 !important;
+  border-color: #FF4C00 !important;
+  color: #ffffff !important;
+}
+

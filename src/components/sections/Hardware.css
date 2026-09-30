@@ -176,3 +176,42 @@
   border-color: #FF4C00;
   color: #FF4C00;
 }
+
+/* =============================================
+   Dark Mode Overrides for Hardware.css
+   ============================================= */
+.dark .hardware-section {
+  background: #0A0D14 !important;
+}
+
+.dark .hardware-title {
+  color: #F8FAFC !important;
+}
+
+.dark .hardware-subtitle {
+  color: #94A3B8 !important;
+}
+
+.dark .hardware-card {
+  background: #111723 !important;
+  border-color: #1E293B !important;
+}
+
+.dark .hardware-card-name {
+  color: #F8FAFC !important;
+}
+
+.dark .hardware-card-desc {
+  color: #94A3B8 !important;
+}
+
+.dark .hardware-compat-label {
+  color: #94A3B8 !important;
+}
+
+.dark .hardware-compat-item {
+  background: #111723 !important;
+  border-color: #1E293B !important;
+  color: #CBD5E1 !important;
+}
+

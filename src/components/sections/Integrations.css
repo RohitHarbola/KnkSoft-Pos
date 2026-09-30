@@ -190,3 +190,56 @@
   background: #DE3700;
   transform: translateY(-1px);
 }
+
+/* =============================================
+   Dark Mode Overrides for Integrations.css
+   ============================================= */
+.dark .integrations-section {
+  background: #0A0D14 !important;
+}
+
+.dark .integrations-title {
+  color: #F8FAFC !important;
+}
+
+.dark .integrations-subtitle {
+  color: #94A3B8 !important;
+}
+
+.dark .integrations-category-btn {
+  background: #111723 !important;
+  border-color: #1E293B !important;
+  color: #94A3B8 !important;
+}
+
+.dark .integrations-category-btn.active {
+  background: #FF4C00 !important;
+  color: #ffffff !important;
+  border-color: #FF4C00 !important;
+}
+
+.dark .integrations-card {
+  background: #111723 !important;
+  border-color: #1E293B !important;
+}
+
+.dark .integrations-card-name {
+  color: #F8FAFC !important;
+}
+
+.dark .integrations-card-desc {
+  color: #94A3B8 !important;
+}
+
+.dark .integrations-cta-banner {
+  background: #131926 !important;
+  border-color: #1E293B !important;
+}
+
+.dark .integrations-cta-text {
+  color: #F8FAFC !important;
+}
+
+.dark .integrations-cta-sub {
+  color: #94A3B8 !important;
+}

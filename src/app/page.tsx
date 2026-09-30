@@ -19,7 +19,7 @@ export default function Home() {
     <>
       <Hero />
       <TrustBar />
-      <IndustrySelector />
+      {/* <IndustrySelector /> */}
       <IndustryMarketplace />
       <ProductModules />
       <ProductUIShowcase />
@@ -27,7 +27,6 @@ export default function Home() {
       <Integrations />
       <Analytics />
       <CaseStudies />
-      <PricingPreview />
       <FAQ />
       <FinalCTA />
     </>

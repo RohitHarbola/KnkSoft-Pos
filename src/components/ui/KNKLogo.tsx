@@ -4,7 +4,7 @@ import React from 'react';
 import Image from 'next/image';
 
 interface KNKLogoProps {
-  variant?: 'light' | 'dark';
+  variant?: 'light' | 'dark' | 'white';
   size?: 'sm' | 'md' | 'lg' | 'xl';
   className?: string;
   showTagline?: boolean;
@@ -16,7 +16,7 @@ export const KNKLogo: React.FC<KNKLogoProps> = ({
   className = '',
   showTagline = true,
 }) => {
-  const isLight = variant === 'light';
+  const isLight = variant === 'light' || variant === 'white';
 
   // Sizing definitions for the knksoftlogo.svg (aspect ratio ~ 3.96:1)
   const dimensions = {

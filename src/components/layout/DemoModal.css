@@ -18,8 +18,13 @@
 }
 
 @keyframes modalOverlayFadeIn {
-  from { opacity: 0; }
-  to { opacity: 1; }
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
 }
 
 .demo-modal-panel {
@@ -41,6 +46,7 @@
     opacity: 0;
     transform: translateY(16px) scale(0.98);
   }
+
   to {
     opacity: 1;
     transform: translateY(0) scale(1);
@@ -182,13 +188,62 @@
   .demo-modal-panel {
     border-radius: 20px;
   }
+
   .demo-modal-header {
     padding: 1.25rem 1.25rem 0.4rem;
   }
+
   .demo-modal-body {
     padding: 0.85rem 1.25rem 1.25rem;
   }
+
   .demo-modal-title {
     font-size: 1.3rem;
   }
+}
+
+/* =============================================
+   Dark Mode Overrides for DemoModal.css
+   ============================================= */
+.dark .demo-modal-panel {
+  background: #111723 !important;
+  border-color: #1E293B !important;
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.7) !important;
+}
+
+.dark .demo-modal-close {
+  background: #1E293B !important;
+  border-color: #334155 !important;
+  color: #CBD5E1 !important;
+}
+
+.dark .demo-modal-close:hover {
+  background: #334155 !important;
+  color: #F8FAFC !important;
+}
+
+.dark .demo-modal-title {
+  color: #F8FAFC !important;
+}
+
+.dark .demo-modal-subtitle {
+  color: #94A3B8 !important;
+}
+
+.dark .demo-modal-label {
+  color: #CBD5E1 !important;
+}
+
+.dark .demo-modal-input {
+  background: #161F2E !important;
+  border-color: #334155 !important;
+  color: #F8FAFC !important;
+}
+
+.dark .demo-modal-input:focus {
+  border-color: #FF4C00 !important;
+}
+
+.dark .demo-modal-input::placeholder {
+  color: #64748B !important;
 }

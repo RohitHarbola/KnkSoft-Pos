@@ -20,3 +20,12 @@
     padding: 3rem 0 4rem;
   }
 }
+
+/* =============================================
+   Dark Mode Overrides for FAQ.css
+   ============================================= */
+.dark .faq-knk-section {
+  background: #0B0F17 !important;
+  border-top-color: #1E293B !important;
+  border-bottom-color: #1E293B !important;
+}

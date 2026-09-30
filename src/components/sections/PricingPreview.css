@@ -268,3 +268,50 @@
 .pricing-card.featured .pricing-cta:hover {
   background: #DE3700;
 }
+
+/* =============================================
+   Dark Mode Overrides for PricingPreview.css
+   ============================================= */
+.dark .pricing-section {
+  background: #0A0D14 !important;
+}
+
+.dark .pricing-title {
+  color: #F8FAFC !important;
+}
+
+.dark .pricing-subtitle {
+  color: #94A3B8 !important;
+}
+
+.dark .pricing-card {
+  background: #111723 !important;
+  border-color: #1E293B !important;
+}
+
+.dark .pricing-card:not(.featured) .pricing-plan-name {
+  color: #F8FAFC !important;
+}
+
+.dark .pricing-card:not(.featured) .pricing-plan-desc {
+  color: #94A3B8 !important;
+}
+
+.dark .pricing-card:not(.featured) .pricing-price {
+  color: #F8FAFC !important;
+}
+
+.dark .pricing-card:not(.featured) .pricing-feature-item {
+  color: #CBD5E1 !important;
+}
+
+.dark .pricing-card:not(.featured) .pricing-cta {
+  border-color: #334155 !important;
+  color: #F8FAFC !important;
+}
+
+.dark .pricing-card:not(.featured) .pricing-cta:hover {
+  border-color: #FF4C00 !important;
+  color: #FF4C00 !important;
+}
+

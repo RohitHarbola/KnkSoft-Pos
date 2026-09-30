@@ -825,3 +825,36 @@
   margin: 0;
   margin-bottom: 24px;
 }
+
+/* =============================================
+   Dark Mode Overrides for TrustBar.css
+   ============================================= */
+.dark .toast-trustbar-section {
+  background: #0B0F17 !important;
+  border-bottom-color: #1E293B !important;
+}
+
+.dark .toast-brand-ticker-container {
+  border-bottom-color: #1E293B !important;
+}
+
+.dark .toast-runbusy-title {
+  color: #F8FAFC !important;
+}
+
+.dark .toast-runbusy-subtitle {
+  color: #94A3B8 !important;
+}
+
+.dark .toast-tab-pill {
+  background: #111723 !important;
+  border-color: #1E293B !important;
+  color: #94A3B8 !important;
+}
+
+.dark .toast-tab-pill.active {
+  background: #FF4C00 !important;
+  color: #ffffff !important;
+  border-color: #FF4C00 !important;
+}
+

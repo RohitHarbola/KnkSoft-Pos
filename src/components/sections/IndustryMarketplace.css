@@ -1,0 +1,35 @@
+/* =============================================
+   IndustryMarketplace.css — Industry Marketplace Solutions
+   Styled with compact typography and aligned card grids
+   ============================================= */
+
+.industry-marketplace-section {
+  background: rgba(248, 250, 252, 0.7);
+  padding: 2.5rem 0 3rem;
+  border-top: 1px solid rgba(226, 232, 240, 0.8);
+  border-bottom: 1px solid rgba(226, 232, 240, 0.8);
+  position: relative;
+  overflow: hidden;
+}
+
+.industry-marketplace-inner {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 1.25rem;
+}
+
+@media (max-width: 640px) {
+  .industry-marketplace-section {
+    padding: 2rem 0 2.5rem;
+  }
+}
+
+/* =============================================
+   Dark Mode Overrides for IndustryMarketplace
+   ============================================= */
+.dark .industry-marketplace-section {
+  background: #0B0F17 !important;
+  border-top-color: #1E293B !important;
+  border-bottom-color: #1E293B !important;
+}
+

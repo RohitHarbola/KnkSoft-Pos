@@ -50,7 +50,7 @@ const RESTAURANT_CARDS: ShowcaseCard[] = [
   },
   {
     id: 'rest-iq',
-    title: 'Toast IQ',
+    title: 'KNK IQ',
     subtitle: 'AI assistant that gets stuff done.',
     images: ['/showcase/analytics-ai.jpg', '/modules/analytics.png', '/showcase/pos-terminal.jpg'],
     widgetType: 'toast-iq-restaurant',
@@ -59,7 +59,7 @@ const RESTAURANT_CARDS: ShowcaseCard[] = [
     id: 'rest-hardware',
     title: 'Hardware',
     subtitle: 'Battle-tested in busy businesses.',
-    images: ['/showcase/handheld-dock.jpg', '/showcase/dual-screen.jpg', '/showcase/payments-puck.jpg'],
+    images: ['/showcase/handheld-dock.jpg', '/showcase/dual-screen.jpg', '/showcase/Knkshowcase.png'],
     widgetType: 'hardware-dock',
   },
   {
@@ -94,7 +94,7 @@ const RESTAURANT_CARDS: ShowcaseCard[] = [
     id: 'rest-payments',
     title: 'Payments',
     subtitle: 'Integrated, PCI-compliant.',
-    images: ['/showcase/payments-puck.jpg', '/showcase/handheld-dock.jpg', '/modules/payments.png'],
+    images: ['/showcase/Knkshowcase.png', '/showcase/handheld-dock.jpg', '/modules/payments.png'],
     widgetType: 'payments-puck',
   },
 ];
@@ -109,14 +109,14 @@ const RETAIL_CARDS: ShowcaseCard[] = [
   },
   {
     id: 'ret-retail',
-    title: 'Toast Retail',
+    title: 'KNK Retail',
     subtitle: 'Run your store from one connected place.',
     images: ['/showcase/retail-scanner.jpg', '/showcase/dual-screen.jpg', '/modules/inventory.png'],
     widgetType: 'toast-retail-scan',
   },
   {
     id: 'ret-iq',
-    title: 'Toast IQ',
+    title: 'KNK IQ',
     subtitle: 'AI for the ins and outs of retail.',
     images: ['/showcase/analytics-ai.jpg', '/modules/analytics.png', '/showcase/retail-scanner.jpg'],
     widgetType: 'toast-iq-retail',
@@ -153,7 +153,7 @@ const RETAIL_CARDS: ShowcaseCard[] = [
     id: 'ret-handheld',
     title: 'Handheld POS',
     subtitle: 'Lightning fast, with smart features built in.',
-    images: ['/showcase/handheld-dock.jpg', '/showcase/retail-scanner.jpg', '/showcase/payments-puck.jpg'],
+    images: ['/showcase/handheld-dock.jpg', '/showcase/retail-scanner.jpg', '/showcase/Knkshowcase.png'],
     widgetType: 'handheld-pos',
   },
 ];
@@ -165,7 +165,7 @@ interface BrandPartner {
   styledName: React.ReactNode;
 }
 
-/** Official Brand Ticker matching pos.toasttab.com with Interactive Hover Popups */
+/** Official Brand Ticker matching pos.KNKtab.com with Interactive Hover Popups */
 const BRAND_PARTNERS: BrandPartner[] = [
   {
     id: 'french-laundry',

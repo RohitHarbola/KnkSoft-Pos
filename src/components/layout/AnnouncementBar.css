@@ -68,3 +68,17 @@
   color: #0C4A6E;
   background: rgba(3, 105, 161, 0.12);
 }
+
+/* =============================================
+   Dark Mode Overrides for AnnouncementBar
+   ============================================= */
+.dark .announcement-bar {
+  background: #082F49 !important;
+  border-bottom-color: #0369A1 !important;
+  color: #BAE6FD !important;
+}
+
+.dark .announcement-bar a {
+  color: #7DD3FC !important;
+}
+

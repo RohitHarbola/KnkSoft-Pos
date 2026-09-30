@@ -33,7 +33,7 @@ export const AnnouncementBar: React.FC = () => {
         {/* Center message */}
         <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 8 }}>
           <span style={{ background: '#0284C7', color: '#ffffff', borderRadius: 100, padding: '2px 10px', fontSize: '0.7rem', fontWeight: 800, textTransform: 'uppercase', letterSpacing: '0.06em' }}>
-            KNK POS v5.0
+            KNK POS v1.0
           </span>
           <span style={{ color: '#0C4A6E', fontWeight: 600 }}>
             High-Speed Touch POS &amp; Instant UPI Soundbox Integration

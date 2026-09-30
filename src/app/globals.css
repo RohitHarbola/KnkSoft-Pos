@@ -18,6 +18,7 @@
 @import '../components/sections/Workflow.css';
 @import '../components/sections/Analytics.css';
 @import '../components/sections/IndustrySelector.css';
+@import '../components/sections/IndustryMarketplace.css';
 @import '../components/sections/Integrations.css';
 @import '../components/sections/Hardware.css';
 @import '../components/sections/PricingPreview.css';
@@ -244,3 +245,203 @@ section p, main p {
   clip: rect(0, 0, 0, 0);
   border: 0;
 }
+
+/* ============================================================
+   UNIVERSAL SITE-WIDE DARK MODE STYLES
+   Ensures entire website adapts seamlessly when dark mode is active
+   ============================================================ */
+html.dark {
+  color-scheme: dark;
+}
+
+html.dark body {
+  background-color: #0A0D14 !important;
+  color: #F1F5F9 !important;
+}
+
+/* Base Headings & Text in Dark Mode */
+.dark h1,
+.dark h2,
+.dark h3,
+.dark h4,
+.dark h5,
+.dark h6,
+.dark .section-heading,
+.dark .heading {
+  color: #F8FAFC;
+}
+
+.dark p {
+  color: #94A3B8;
+}
+
+/* Global Container & Card Dark Mode Transformations */
+.dark .bg-white {
+  background-color: #111723 !important;
+}
+
+.dark .bg-slate-50,
+.dark .bg-slate-100,
+.dark .bg-gray-50,
+.dark .bg-gray-100,
+.dark .bg-zinc-50 {
+  background-color: #161F2E !important;
+}
+
+.dark .bg-slate-900,
+.dark .bg-gray-900 {
+  background-color: #0B0F17 !important;
+}
+
+/* Typography High-Contrast in Dark Mode */
+.dark .text-slate-900,
+.dark .text-slate-800,
+.dark .text-gray-900,
+.dark .text-gray-800,
+.dark .text-zinc-900,
+.dark .text-[#0D1117],
+.dark .text-[#1A1918],
+.dark .text-[#0F172A] {
+  color: #F8FAFC !important;
+}
+
+.dark .text-slate-700,
+.dark .text-slate-600,
+.dark .text-gray-700,
+.dark .text-gray-600,
+.dark .text-zinc-700 {
+  color: #CBD5E1 !important;
+}
+
+.dark .text-slate-500,
+.dark .text-slate-400,
+.dark .text-gray-500,
+.dark .text-gray-400,
+.dark .text-zinc-500 {
+  color: #94A3B8 !important;
+}
+
+/* Borders & Dividers in Dark Mode */
+.dark .border-slate-100,
+.dark .border-slate-200,
+.dark .border-slate-300,
+.dark .border-gray-100,
+.dark .border-gray-200,
+.dark .border-zinc-200,
+.dark .border-[#e8e2de],
+.dark .border-[#E2E8F0] {
+  border-color: #1E293B !important;
+}
+
+.dark .divide-slate-100 > * + *,
+.dark .divide-slate-200 > * + *,
+.dark .divide-gray-100 > * + *,
+.dark .divide-gray-200 > * + * {
+  border-color: #1E293B !important;
+}
+
+/* Form Controls & Inputs in Dark Mode */
+.dark input:not([type='checkbox']):not([type='radio']),
+.dark select,
+.dark textarea {
+  background-color: #151D2C !important;
+  color: #F8FAFC !important;
+  border-color: #334155 !important;
+}
+
+.dark input::placeholder,
+.dark textarea::placeholder {
+  color: #64748B !important;
+}
+
+.dark input:focus,
+.dark select:focus,
+.dark textarea:focus {
+  border-color: #FF4C00 !important;
+  box-shadow: 0 0 0 3px rgba(255, 76, 0, 0.25) !important;
+}
+
+/* Elevation Shadows in Dark Mode */
+.dark .shadow-xs,
+.dark .shadow-sm,
+.dark .shadow-md,
+.dark .shadow-lg,
+.dark .shadow-xl {
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.45) !important;
+}
+
+/* Tables in Dark Mode */
+.dark table {
+  background-color: #111723 !important;
+  color: #F1F5F9 !important;
+}
+
+.dark th {
+  background-color: #161F2E !important;
+  color: #CBD5E1 !important;
+  border-bottom-color: #1E293B !important;
+}
+
+.dark td {
+  border-bottom-color: #1E293B !important;
+  color: #E2E8F0 !important;
+}
+
+.dark tr:hover td {
+  background-color: rgba(255, 255, 255, 0.02) !important;
+}
+
+/* Section Components Specific Overrides */
+.dark .trust-bar-section,
+.dark .product-modules-section,
+.dark .workflow-section,
+.dark .analytics-section,
+.dark .industry-section,
+.dark .integrations-section,
+.dark .hardware-section,
+.dark .pricing-section,
+.dark .case-studies-section,
+.dark .faq-section {
+  background-color: #0A0D14 !important;
+  color: #F1F5F9 !important;
+}
+
+.dark .card-hover:hover {
+  border-color: rgba(255, 76, 0, 0.4) !important;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6) !important;
+}
+
+/* Specific warm/light background conversions in Dark Mode */
+.dark [class*="bg-[#f9f5f3]"],
+.dark [class*="bg-[#fbf7f4]"],
+.dark [class*="bg-[#f8fafc]"],
+.dark [class*="bg-[#FAF8F6]"],
+.dark [class*="bg-[#F8FAFC]"],
+.dark [class*="bg-[#FFF6F1]"] {
+  background-color: #111723 !important;
+}
+
+.dark [class*="bg-[#FFF3EF]"] {
+  background-color: rgba(255, 76, 0, 0.12) !important;
+}
+
+.dark [class*="border-[#e8e2de]"],
+.dark [class*="border-[#eae5e1]"],
+.dark [class*="border-[#f0ebe8]"],
+.dark [class*="border-[#FFD5C2]"] {
+  border-color: #1E293B !important;
+}
+
+.dark [class*="text-[#1A1918]"],
+.dark [class*="text-[#1a1918]"],
+.dark [class*="text-[#252525]"] {
+  color: #F8FAFC !important;
+}
+
+.dark [class*="text-[#565352]"],
+.dark [class*="text-[#4a4541]"],
+.dark [class*="text-[#9b9089]"] {
+  color: #94A3B8 !important;
+}
+
+

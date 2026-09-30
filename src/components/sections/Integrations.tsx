@@ -33,7 +33,7 @@ const INTEGRATIONS_DATA = [
   { name: 'PhonePe PG & POS', cat: 'payments', desc: 'QR display, smart speaker and fast checkout', badge: 'Official Partner' },
   { name: 'Razorpay POS', cat: 'payments', desc: 'Card swipe, net banking and link payment collection', badge: 'Instant Sync' },
   { name: 'Pine Labs Plutus', cat: 'payments', desc: 'Bank credit card EMI and reward points redemption', badge: 'Enterprise' },
-
+ { name: 'Easy Liner', cat: 'payments', desc: 'Bank credit card EMI and reward points redemption', badge: 'Enterprise' },
   // Delivery
   { name: 'Swiggy Food & Instamart', cat: 'delivery', desc: 'Auto-accept orders & live menu inventory sync', badge: 'Real-Time' },
   { name: 'Zomato Dining & Delivery', cat: 'delivery', desc: 'Direct order punching into kitchen KDS & POS', badge: 'Real-Time' },
@@ -59,7 +59,7 @@ const INTEGRATIONS_DATA = [
   // E-Commerce
   { name: 'Shopify India', cat: 'ecommerce', desc: 'Omnichannel inventory sync between physical store & site', badge: 'Omnichannel' },
   { name: 'WooCommerce', cat: 'ecommerce', desc: 'Live stock level sync for WordPress online storefronts', badge: '2-Way Sync' },
-  { name: 'DotPe Digital Catalog', cat: 'ecommerce', desc: 'QR digital catalog for contactless order-ahead', badge: 'Quick Setup' }
+  { name: 'KNK Digital Catalog', cat: 'ecommerce', desc: 'QR digital catalog for contactless order-ahead', badge: 'Quick Setup' }
 ];
 
 export const Integrations: React.FC = () => {

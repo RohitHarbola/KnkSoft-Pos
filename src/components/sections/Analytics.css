@@ -4,7 +4,7 @@
 
 .analytics-section {
   background: #ffffff;
-  padding: 5.5rem 0 6rem;
+  padding: 2.75rem 0 3.25rem;
   position: relative;
   overflow: hidden;
   border-top: 1px solid #e2e8f0;
@@ -22,10 +22,10 @@
 .analytics-inner {
   max-width: 1280px;
   margin: 0 auto;
-  padding: 0 1.5rem;
+  padding: 0 1.25rem;
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 3.5rem;
+  gap: 2.25rem;
   align-items: center;
   position: relative;
   z-index: 1;
@@ -34,7 +34,7 @@
 @media (max-width: 1024px) {
   .analytics-inner {
     grid-template-columns: 1fr;
-    gap: 3rem;
+    gap: 2rem;
   }
 }
 
@@ -46,52 +46,52 @@
 .analytics-eyebrow {
   display: inline-flex;
   align-items: center;
-  gap: 6px;
+  gap: 5px;
   background: #FFF3EF;
   border: 1px solid #FFD5C2;
   border-radius: 100px;
-  padding: 5px 14px;
-  font-size: 0.78rem;
+  padding: 4px 11px;
+  font-size: 0.7rem;
   font-weight: 700;
   color: #FF4C00;
   text-transform: uppercase;
-  letter-spacing: 0.07em;
-  margin-bottom: 1rem;
+  letter-spacing: 0.06em;
+  margin-bottom: 0.65rem;
   align-self: flex-start;
 }
 
 .analytics-title {
-  font-size: 1.875rem;
+  font-size: 1.5rem;
   font-weight: 700;
   color: #0f172a;
-  line-height: 1.18;
-  letter-spacing: -0.03em;
-  margin-bottom: 1rem;
+  line-height: 1.22;
+  letter-spacing: -0.025em;
+  margin-bottom: 0.65rem;
 }
 
 @media (min-width: 640px) {
   .analytics-title {
-    font-size: 2.25rem;
+    font-size: 1.85rem;
   }
 }
 
 @media (min-width: 1024px) {
   .analytics-title {
-    font-size: 2.75rem;
+    font-size: 2.15rem;
   }
 }
 
 .analytics-subtitle {
-  font-size: 1rem;
+  font-size: 0.85rem;
   font-weight: 400;
   color: #475569;
-  line-height: 1.65;
-  margin-bottom: 1.75rem;
+  line-height: 1.55;
+  margin-bottom: 1.15rem;
 }
 
 @media (min-width: 1024px) {
   .analytics-subtitle {
-    font-size: 1.1rem;
+    font-size: 0.9rem;
   }
 }
 
@@ -99,13 +99,13 @@
 .analytics-feature-item {
   display: flex;
   align-items: flex-start;
-  gap: 14px;
+  gap: 10px;
 }
 
 .analytics-feature-icon {
-  width: 38px;
-  height: 38px;
-  border-radius: 12px;
+  width: 30px;
+  height: 30px;
+  border-radius: 9px;
   background: #FFF3EF;
   border: 1px solid #FFD5C2;
   display: flex;
@@ -117,43 +117,43 @@
 }
 
 .analytics-feature-item:hover .analytics-feature-icon {
-  transform: scale(1.08);
+  transform: scale(1.05);
 }
 
 .analytics-feature-title {
-  font-size: 0.95rem;
+  font-size: 0.85rem;
   font-weight: 700;
   color: #0f172a;
-  line-height: 1.35;
-  margin-bottom: 0.25rem;
+  line-height: 1.3;
+  margin-bottom: 0.15rem;
 }
 
 .analytics-feature-desc {
-  font-size: 0.85rem;
+  font-size: 0.76rem;
   font-weight: 400;
   color: #64748b;
-  line-height: 1.5;
+  line-height: 1.45;
 }
 
 /* Dashboard visual */
 .analytics-visual {
   background: #ffffff;
   border: 1px solid #e2e8f0;
-  border-radius: 24px;
+  border-radius: 18px;
   overflow: hidden;
-  box-shadow: 0 20px 45px -12px rgba(15, 23, 42, 0.08), 0 4px 16px -2px rgba(15, 23, 42, 0.04);
+  box-shadow: 0 12px 30px -8px rgba(15, 23, 42, 0.07), 0 2px 8px -2px rgba(15, 23, 42, 0.03);
   position: relative;
   transition: all 0.3s ease;
 }
 
 .analytics-visual:hover {
-  box-shadow: 0 25px 55px -12px rgba(255, 76, 0, 0.1), 0 6px 20px -2px rgba(15, 23, 42, 0.06);
+  box-shadow: 0 16px 36px -8px rgba(255, 76, 0, 0.08), 0 4px 12px -2px rgba(15, 23, 42, 0.04);
   border-color: #ffd5c2;
 }
 
 .analytics-visual-header {
   background: #f8fafc;
-  padding: 1.25rem 1.5rem;
+  padding: 0.85rem 1.15rem;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -161,43 +161,89 @@
 }
 
 .analytics-visual-body {
-  padding: 1.5rem;
+  padding: 1.15rem;
 }
 
 /* KPI mini cards */
 .analytics-kpi-card {
   background: #f8fafc;
   border: 1px solid #e2e8f0;
-  border-radius: 16px;
-  padding: 1rem 1.15rem;
+  border-radius: 12px;
+  padding: 0.75rem 0.9rem;
   transition: all 0.2s ease;
 }
 
 .analytics-kpi-card:hover {
   background: #ffffff;
   border-color: #ffd5c2;
-  box-shadow: 0 4px 12px rgba(255, 76, 0, 0.06);
+  box-shadow: 0 3px 10px rgba(255, 76, 0, 0.05);
 }
 
 .analytics-kpi-label {
-  font-size: 0.72rem;
+  font-size: 0.65rem;
   font-weight: 700;
   color: #64748b;
   text-transform: uppercase;
-  letter-spacing: 0.06em;
-  margin-bottom: 0.35rem;
+  letter-spacing: 0.05em;
+  margin-bottom: 0.2rem;
 }
 
 .analytics-kpi-value {
-  font-size: 1.35rem;
+  font-size: 1.15rem;
   font-weight: 800;
   color: #0f172a;
-  letter-spacing: -0.03em;
+  letter-spacing: -0.02em;
   line-height: 1.1;
 }
 
 .analytics-kpi-sub {
-  font-size: 0.72rem;
+  font-size: 0.65rem;
   font-weight: 600;
-  margin-top: 0.25rem;
+  margin-top: 0.15rem;
 }
+
+/* =============================================
+   Dark Mode Overrides for Analytics.css
+   ============================================= */
+.dark .analytics-section {
+  background: #0B0F17 !important;
+  border-top-color: #1E293B !important;
+  border-bottom-color: #1E293B !important;
+}
+
+.dark .analytics-headline {
+  color: #F8FAFC !important;
+}
+
+.dark .analytics-description {
+  color: #94A3B8 !important;
+}
+
+.dark .analytics-bullet {
+  color: #E2E8F0 !important;
+}
+
+.dark .analytics-card-frame {
+  background: #111723 !important;
+  border-color: #1E293B !important;
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.5) !important;
+}
+
+.dark .analytics-kpi-card {
+  background: #161F2E !important;
+  border-color: #1E293B !important;
+}
+
+.dark .analytics-kpi-card:hover {
+  background: #1A2436 !important;
+  border-color: rgba(255, 76, 0, 0.4) !important;
+}
+
+.dark .analytics-kpi-value {
+  color: #F8FAFC !important;
+}
+
+.dark .analytics-kpi-label {
+  color: #94A3B8 !important;
+}
+

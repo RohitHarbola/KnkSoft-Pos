@@ -23,3 +23,13 @@
     padding: 3rem 0 4rem;
   }
 }
+
+/* =============================================
+   Dark Mode Overrides for ProductUIShowcase
+   ============================================= */
+.dark .product-showcase-section {
+  background: #0A0D14 !important;
+  border-top-color: #1E293B !important;
+  border-bottom-color: #1E293B !important;
+}
+
