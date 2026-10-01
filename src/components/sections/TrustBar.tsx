@@ -4,14 +4,6 @@ import React, { useState, useRef } from 'react';
 import Image from 'next/image';
 import {
   ArrowRight,
-  Check,
-  MessageSquare,
-  Sparkles,
-  Zap,
-  TrendingUp,
-  ShieldCheck,
-  ShoppingBag,
-  Receipt,
   Store,
   UtensilsCrossed,
 } from 'lucide-react';
@@ -23,21 +15,21 @@ interface ShowcaseCard {
   subtitle: string;
   images: string[];
   widgetType?:
-    | 'pos'
-    | 'toast-iq-restaurant'
-    | 'hardware-dock'
-    | 'online-ordering-restaurant'
-    | 'loyalty-30'
-    | 'kds'
-    | 'integrations'
-    | 'payments-puck'
-    | 'toast-retail-scan'
-    | 'toast-iq-retail'
-    | 'hardware-dual'
-    | 'catering-invoice'
-    | 'loyalty-45'
-    | 'retail-mobile-order'
-    | 'handheld-pos';
+  | 'pos'
+  | 'toast-iq-restaurant'
+  | 'hardware-dock'
+  | 'online-ordering-restaurant'
+  | 'loyalty-30'
+  | 'kds'
+  | 'integrations'
+  | 'payments-puck'
+  | 'toast-retail-scan'
+  | 'toast-iq-retail'
+  | 'hardware-dual'
+  | 'catering-invoice'
+  | 'loyalty-45'
+  | 'retail-mobile-order'
+  | 'handheld-pos';
 }
 
 const RESTAURANT_CARDS: ShowcaseCard[] = [
@@ -45,14 +37,14 @@ const RESTAURANT_CARDS: ShowcaseCard[] = [
     id: 'rest-pos',
     title: 'Point of sale',
     subtitle: 'Packed with 1,000 powerful features.',
-    images: ['/showcase/pos-terminal.jpg', '/showcase/dual-screen.jpg', '/modules/pos.png'],
+    images: ['/showcase/pos-terminal.jpg', '/modules/pos.png', '/showcase/dual-screen.jpg'],
     widgetType: 'pos',
   },
   {
     id: 'rest-iq',
     title: 'KNK IQ',
     subtitle: 'AI assistant that gets stuff done.',
-    images: ['/showcase/analytics-ai.jpg', '/modules/analytics.png', '/showcase/pos-terminal.jpg'],
+    images: ['/showcase/analytics-ai.jpg', '/modules/analytics.png'],
     widgetType: 'toast-iq-restaurant',
   },
   {
@@ -66,7 +58,7 @@ const RESTAURANT_CARDS: ShowcaseCard[] = [
     id: 'rest-online-ordering',
     title: 'Online ordering',
     subtitle: 'Add a revenue stream, commission-free.',
-    images: ['/showcase/online-ordering.jpg', '/modules/crm.png', '/showcase/pos-terminal.jpg'],
+    images: ['/showcase/online-ordering.jpg', '/modules/crm.png'],
     widgetType: 'online-ordering-restaurant',
   },
   {
@@ -80,7 +72,7 @@ const RESTAURANT_CARDS: ShowcaseCard[] = [
     id: 'rest-kds',
     title: 'Kitchen display system',
     subtitle: 'Every order from every channel in one place.',
-    images: ['/showcase/kds-display.jpg', '/modules/pos.png', '/showcase/handheld-dock.jpg'],
+    images: ['/showcase/kds-display.jpg', '/modules/Kitchen.png', '/showcase/handheld-dock.jpg'],
     widgetType: 'kds',
   },
   {
@@ -111,7 +103,7 @@ const RETAIL_CARDS: ShowcaseCard[] = [
     id: 'ret-retail',
     title: 'KNK Retail',
     subtitle: 'Run your store from one connected place.',
-    images: ['/showcase/retail-scanner.jpg', '/showcase/dual-screen.jpg', '/modules/inventory.png'],
+    images: ['/showcase/retail-scanner.jpg', '/showcase/dual-screen.jpg', '/modules/retail.png'],
     widgetType: 'toast-retail-scan',
   },
   {
@@ -132,7 +124,7 @@ const RETAIL_CARDS: ShowcaseCard[] = [
     id: 'ret-catering',
     title: 'Catering and events',
     subtitle: 'Simplify catering, from BEOs to billing.',
-    images: ['/showcase/online-ordering.jpg', '/modules/gst.png', '/showcase/dual-screen.jpg'],
+    images: ['/showcase/online-ordering.jpg', '/modules/catering.png', '/showcase/dual-screen.jpg'],
     widgetType: 'catering-invoice',
   },
   {
@@ -162,82 +154,46 @@ interface BrandPartner {
   id: string;
   name: string;
   tagline: string;
-  styledName: React.ReactNode;
+  logo: string;
 }
 
-/** Official Brand Ticker matching pos.KNKtab.com with Interactive Hover Popups */
+/** Official Brand Partner data for prominent Indian QSR and restaurant chains */
 const BRAND_PARTNERS: BrandPartner[] = [
   {
-    id: 'french-laundry',
-    name: 'THE FRENCH LAUNDRY',
-    tagline: '3 Michelin-starred icon',
-    styledName: <span className="brand-french-laundry">FRENCH <span className="bold-letter">L</span>AUNDRY</span>,
+    id: 'barista',
+    name: 'BARISTA COFFEE',
+    tagline: 'Your Premium Coffee Ritual',
+    logo: '/brands/barista.svg',
   },
   {
-    id: 'mendocino-farms',
-    name: 'MENDOCINO FARMS',
-    tagline: 'Fresh craft sandwich & salad leader',
-    styledName: <span className="brand-mendocino">Mendocino <span className="small-farms">Farms</span></span>,
+    id: 'wow-momo',
+    name: 'WOW! MOMO',
+    tagline: "Flavours That Wow Always",
+    logo: '/brands/wow-momo.svg',
   },
   {
-    id: 'the-varsity',
-    name: 'THE VARSITY',
-    tagline: "World's largest drive-in restaurant",
-    styledName: <span className="brand-varsity">THE <strong>VARSITY</strong></span>,
+    id: 'goli-vada-pav',
+    name: 'GOLI VADA PAV',
+    tagline: "India’s Ultimate Native Burger",
+    logo: '/brands/goli-vada-pav.svg',
   },
   {
-    id: 'marea',
-    name: 'MAREA',
-    tagline: 'Michelin-starred coastal dining',
-    styledName: <span className="brand-marea">marea <span className="marea-sub">NEW YORK</span></span>,
+    id: 'burger-singh',
+    name: 'BURGER SINGH',
+    tagline: "Big Desi Craft Burgers",
+    logo: '/brands/burger-singh.svg',
   },
   {
-    id: 'trick-dog',
-    name: 'TRICK DOG',
-    tagline: "World's 50 Best Bars honoree",
-    styledName: <span className="brand-trick-dog">✛ TRICK DOG ✛</span>,
+    id: 'biryani-blues',
+    name: 'BIRYANI BLUES',
+    tagline: 'Authentic Dum Biryani Perfection',
+    logo: '/brands/biryani-blues.svg',
   },
   {
-    id: 'ushg',
-    name: 'UNION SQUARE HOSPITALITY GROUP',
-    tagline: 'Hospitality industry leader',
-    styledName: <span className="brand-ushg">UNION SQUARE <span className="ushg-sub">HOSPITALITY GROUP</span></span>,
-  },
-  {
-    id: 'hh-bagels',
-    name: 'H&H BAGELS',
-    tagline: 'Legendary NYC bagel brand',
-    styledName: <span className="brand-hh">H&H <span className="hh-sub">BAGELS</span></span>,
-  },
-  {
-    id: 'giordanos',
-    name: "GIORDANO'S",
-    tagline: 'Chicago deep-dish icon',
-    styledName: <span className="brand-giordanos">Giordano&apos;s</span>,
-  },
-  {
-    id: 'hungry-howies',
-    name: "HUNGRY HOWIE'S",
-    tagline: 'Top 10 national pizza franchise',
-    styledName: <span className="brand-hungry-howies">Hungry Howie&apos;s</span>,
-  },
-  {
-    id: 'alinea',
-    name: 'THE ALINEA GROUP',
-    tagline: '3 Michelin-starred culinary giant',
-    styledName: <span className="brand-alinea">THE ALINEA GROUP</span>,
-  },
-  {
-    id: 'canlis',
-    name: 'CANLIS',
-    tagline: 'Pacific Northwest icon',
-    styledName: <span className="brand-canlis">CANLIS</span>,
-  },
-  {
-    id: 'zabars',
-    name: "ZABAR'S",
-    tagline: 'NYC gourmet food legend',
-    styledName: <span className="brand-zabars">ZABAR&apos;S</span>,
+    id: 'jumboking',
+    name: 'JUMBOKING',
+    tagline: "Pure On-The-Go Satisfaction",
+    logo: '/brands/jumboking.svg',
   },
 ];
 
@@ -354,104 +310,6 @@ const InteractiveShowcaseCard: React.FC<{
           );
         })}
 
-        {/* ==========================================
-            RESTAURANT WIDGETS
-           ========================================== */}
-        {card.widgetType === 'toast-iq-restaurant' && (
-          <div className="toast-widget-iq" onClick={(e) => e.stopPropagation()}>
-            <div className="toast-widget-iq-header">
-              <Sparkles style={{ width: 11, height: 11, color: '#FF4C00' }} />
-              <span>Update Menu Item Stock</span>
-            </div>
-            <div className="toast-widget-iq-content">
-              <div className="toast-widget-iq-row">
-                <span>Item</span>
-                <span>New Status</span>
-              </div>
-              <div className="toast-widget-iq-row val">
-                <span>Lobster Ravioli</span>
-                <span className="stock-tag">Out of stock</span>
-              </div>
-            </div>
-            <button type="button" className="toast-widget-save-btn">
-              <Check style={{ width: 11, height: 11, strokeWidth: 3 }} /> Save
-            </button>
-          </div>
-        )}
-
-        {card.widgetType === 'online-ordering-restaurant' && (
-          <div className="toast-widget-notification" onClick={(e) => e.stopPropagation()}>
-            <div className="toast-widget-notification-icon">
-              <MessageSquare style={{ width: 14, height: 14, color: '#ffffff' }} />
-            </div>
-            <div className="toast-widget-notification-content">
-              <div className="toast-widget-notification-top">
-                <span className="toast-widget-app-name">Toast Taqueria</span>
-                <span className="toast-widget-time">1:55 PM</span>
-              </div>
-              <p className="toast-widget-msg">Thanks for your order! Pick up at counter.</p>
-            </div>
-          </div>
-        )}
-
-        {card.widgetType === 'loyalty-30' && (
-          <div className="toast-widget-loyalty" onClick={(e) => e.stopPropagation()}>
-            <div className="toast-loyalty-pts">30 Points</div>
-            <div className="toast-loyalty-sub">Loyalty balance</div>
-          </div>
-        )}
-
-        {card.widgetType === 'integrations' && (
-          <div className="toast-widget-integrations" onClick={(e) => e.stopPropagation()}>
-            <div className="toast-integration-item">
-              <span className="toast-int-tag">Uber Eats</span>
-              <p className="toast-int-text">Drive new demand for your restaurant on Uber Eats.</p>
-              <span className="toast-int-btn">Add App</span>
-            </div>
-          </div>
-        )}
-
-        {/* ==========================================
-            RETAIL WIDGETS
-           ========================================== */}
-        {card.widgetType === 'toast-retail-scan' && (
-          <div className="toast-widget-phone-scan" onClick={(e) => e.stopPropagation()}>
-            <div className="toast-phone-scanner-line" />
-            <div className="toast-phone-barcode-badge">Barcode Scanned</div>
-          </div>
-        )}
-
-        {card.widgetType === 'toast-iq-retail' && (
-          <div className="toast-widget-iq-retail" onClick={(e) => e.stopPropagation()}>
-            <div className="toast-iq-prompt-item">Daily sales trends for this month</div>
-            <div className="toast-iq-prompt-item">List top 10 items by gross sales</div>
-          </div>
-        )}
-
-        {card.widgetType === 'catering-invoice' && (
-          <div className="toast-widget-catering" onClick={(e) => e.stopPropagation()}>
-            <div className="toast-catering-top">
-              <strong>Toast Market</strong>
-              <span>Catering</span>
-            </div>
-            <div className="toast-catering-row">
-              <span>Assorted Sandwich Tray</span>
-              <span>$185.00</span>
-            </div>
-            <div className="toast-catering-total">
-              <span>Total</span>
-              <strong>$524.00</strong>
-            </div>
-          </div>
-        )}
-
-        {card.widgetType === 'loyalty-45' && (
-          <div className="toast-widget-loyalty" onClick={(e) => e.stopPropagation()}>
-            <div className="toast-loyalty-badge">You earned 15 points!</div>
-            <div className="toast-loyalty-pts">45 Points</div>
-            <div className="toast-loyalty-sub">Loyalty balance</div>
-          </div>
-        )}
       </div>
 
       {/* Card Footer Text */}
@@ -474,25 +332,64 @@ export const TrustBar: React.FC = () => {
     <section className="toast-trustbar-section" id="platform">
       <div className="toast-trustbar-inner">
         {/* ============================================================
-            1. TOAST BRAND TICKER (With Interactive Hover Popups)
+            1. DUAL BRAND TICKERS (Row 1: Right-to-Left, Row 2: Left-to-Right)
            ============================================================ */}
         <div className="toast-brand-ticker-container">
+          {/* Row 1: Right-to-Left Ticker */}
           <div className={`toast-brand-ticker-track ${hoveredBrandId ? 'has-hover' : ''}`}>
-            {[...BRAND_PARTNERS, ...BRAND_PARTNERS, ...BRAND_PARTNERS].map((brand, idx) => {
-              const isHovered = hoveredBrandId === `${brand.id}-${idx}`;
+            {[...BRAND_PARTNERS, ...BRAND_PARTNERS, ...BRAND_PARTNERS, ...BRAND_PARTNERS].map((brand, idx) => {
+              const isHovered = hoveredBrandId === `r1-${brand.id}-${idx}`;
               return (
                 <div
-                  key={`${brand.id}-${idx}`}
+                  key={`r1-${brand.id}-${idx}`}
                   className={`toast-brand-logo-item ${isHovered ? 'is-hovered' : ''}`}
-                  onMouseEnter={() => setHoveredBrandId(`${brand.id}-${idx}`)}
+                  onMouseEnter={() => setHoveredBrandId(`r1-${brand.id}-${idx}`)}
                   onMouseLeave={() => setHoveredBrandId(null)}
                 >
-                  {/* Styled Brand Logo Text */}
-                  <div className="toast-brand-logo-display">
-                    {brand.styledName}
+                  {/* Brand Logo Image */}
+                  <div className="toast-brand-logo-display flex items-center justify-center h-10 w-44">
+                    <Image
+                      src={brand.logo}
+                      alt={brand.name}
+                      width={176}
+                      height={44}
+                      className="h-9 w-auto max-w-[170px] object-contain transition-all duration-300 filter contrast-125"
+                    />
                   </div>
 
-                  {/* Hover Popup Tooltip Card (Toast POS exact design) */}
+                  {/* Hover Popup Tooltip Card (Exact Interactive Design) */}
+                  <div className={`toast-logo-hover-card ${isHovered ? 'show' : ''}`}>
+                    <div className="toast-logo-hover-name">{brand.name}</div>
+                    <div className="toast-logo-hover-tagline">{brand.tagline}</div>
+                  </div>
+                </div>
+              );
+            })}
+          </div>
+
+          {/* Row 2: Left-to-Right Ticker (Reverse Movement) */}
+          <div className={`toast-brand-ticker-track-reverse ${hoveredBrandId ? 'has-hover' : ''}`}>
+            {[...BRAND_PARTNERS, ...BRAND_PARTNERS, ...BRAND_PARTNERS, ...BRAND_PARTNERS].map((brand, idx) => {
+              const isHovered = hoveredBrandId === `r2-${brand.id}-${idx}`;
+              return (
+                <div
+                  key={`r2-${brand.id}-${idx}`}
+                  className={`toast-brand-logo-item ${isHovered ? 'is-hovered' : ''}`}
+                  onMouseEnter={() => setHoveredBrandId(`r2-${brand.id}-${idx}`)}
+                  onMouseLeave={() => setHoveredBrandId(null)}
+                >
+                  {/* Brand Logo Image */}
+                  <div className="toast-brand-logo-display flex items-center justify-center h-10 w-44">
+                    <Image
+                      src={brand.logo}
+                      alt={brand.name}
+                      width={176}
+                      height={44}
+                      className="h-9 w-auto max-w-[170px] object-contain transition-all duration-300 filter contrast-125"
+                    />
+                  </div>
+
+                  {/* Hover Popup Tooltip Card (Exact Interactive Design) */}
                   <div className={`toast-logo-hover-card ${isHovered ? 'show' : ''}`}>
                     <div className="toast-logo-hover-name">{brand.name}</div>
                     <div className="toast-logo-hover-tagline">{brand.tagline}</div>

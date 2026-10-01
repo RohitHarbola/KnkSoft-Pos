@@ -3,7 +3,7 @@ import { Metadata } from 'next';
 import { Hardware } from '@/components/sections/Hardware';
 import { Badge } from '@/components/ui/Badge';
 import { ShieldCheck, CheckCircle2 } from 'lucide-react';
-import Link from 'next/link';
+import { DemoModalTrigger } from '@/components/ui/DemoModalTrigger';
 
 export const metadata: Metadata = {
   title: 'BIS Certified POS Hardware Ecosystem | KNK POS India',
@@ -93,12 +93,12 @@ export default function HardwarePage() {
                 </div>
 
                 <div className="pt-2 text-center">
-                  <Link
-                    href="/contact"
-                    className="text-xs text-pos-orange font-bold hover:underline"
+                  <DemoModalTrigger
+                    industry="Hardware Ecosystem"
+                    className="text-xs text-pos-orange font-bold hover:underline cursor-pointer bg-transparent border-0 p-0"
                   >
-                    Need assistance setting up existing hardware? Contact Support →
-                  </Link>
+                    Need assistance setting up existing hardware? Book Demo &amp; Consultation →
+                  </DemoModalTrigger>
                 </div>
               </div>
             </div>

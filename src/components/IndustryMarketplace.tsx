@@ -309,14 +309,14 @@ export const IndustryMarketplace: React.FC = () => {
 
         {/* Tab Content & 2-Column Showcase */}
         <div className="w-full">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-5 items-stretch">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-5 items-start">
             {/* Left 2-Card Grid (7 Columns on large screens) */}
             <motion.div
               key={activeTab}
               variants={containerVariants}
               initial="hidden"
               animate="visible"
-              className="lg:col-span-7 grid grid-cols-1 sm:grid-cols-2 gap-4 items-stretch"
+              className="lg:col-span-7 grid grid-cols-1 sm:grid-cols-2 gap-4 items-start"
             >
               {currentTab.items.slice(0, 2).map((item, index) => (
                 <IndustryMarketplaceCard
@@ -334,30 +334,18 @@ export const IndustryMarketplace: React.FC = () => {
               initial={{ opacity: 0, scale: 0.98 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.35, ease: 'easeOut' }}
-              className="lg:col-span-5 hidden lg:flex flex-col justify-between bg-white border border-slate-200/90 rounded-2xl p-4 sm:p-5 shadow-sm relative overflow-hidden h-full"
+              className="lg:col-span-5 hidden lg:flex flex-col justify-center bg-white border border-slate-200/90 rounded-2xl p-3 sm:p-4 shadow-sm relative overflow-hidden self-stretch"
             >
               {/* Showcase Image */}
-              <div className="relative rounded-xl overflow-hidden bg-slate-50 border border-slate-200/80 p-2 flex items-center justify-center h-48 sm:h-52">
+              <div className="relative flex-1 rounded-xl overflow-hidden bg-slate-50 border border-slate-200/80 p-1 flex items-center justify-center min-h-[220px]">
                 <Image
                   src={currentTab.tabImage}
                   alt={`${currentTab.label} showcase`}
-                  width={380}
-                  height={240}
+                  width={500}
+                  height={320}
                   className="w-full h-full object-contain rounded-lg transition-transform duration-500 hover:scale-105"
                   priority
                 />
-              </div>
-
-              {/* Quick highlight points */}
-              <div className="mt-3 grid grid-cols-2 gap-2.5 pt-3 border-t border-slate-100">
-                <div className="p-2.5 bg-slate-50 rounded-lg border border-slate-100">
-                  <div className="text-sm font-bold text-slate-900">0.5s</div>
-                  <div className="text-[10px] text-slate-500 font-medium">Barcode Scan Speed</div>
-                </div>
-                <div className="p-2.5 bg-slate-50 rounded-lg border border-slate-100">
-                  <div className="text-sm font-bold text-[#FF4C00]">100%</div>
-                  <div className="text-[10px] text-slate-500 font-medium">GST &amp; Audit Ready</div>
-                </div>
               </div>
             </motion.div>
           </div>

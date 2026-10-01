@@ -1,5 +1,6 @@
 import Link from 'next/link';
-import { ArrowLeft, Home } from 'lucide-react';
+import { Home, Sparkles } from 'lucide-react';
+import { DemoModalTrigger } from '@/components/ui/DemoModalTrigger';
 
 export default function NotFound() {
   return (
@@ -24,12 +25,12 @@ export default function NotFound() {
             <Home className="w-4 h-4" />
             Back to Home
           </Link>
-          <Link
-            href="/contact"
-            className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl border border-slate-200 bg-white text-slate-700 font-semibold text-sm hover:bg-slate-50 transition-colors"
+          <DemoModalTrigger
+            className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl border border-slate-200 bg-white text-slate-700 font-semibold text-sm hover:bg-slate-50 transition-colors cursor-pointer"
           >
-            Contact Support
-          </Link>
+            <Sparkles className="w-4 h-4 text-[#FF4C00]" />
+            Request Help / Demo
+          </DemoModalTrigger>
         </div>
       </div>
     </div>

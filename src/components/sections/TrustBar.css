@@ -24,29 +24,57 @@
   overflow: visible;
   width: 100%;
   position: relative;
-  padding: 2.75rem 0;
+  padding: 1.5rem 0;
   border-bottom: 1px solid #f0ebe8;
   margin-bottom: 3.5rem;
   mask-image: linear-gradient(90deg, transparent 0%, black 6%, black 94%, transparent 100%);
   -webkit-mask-image: linear-gradient(90deg, transparent 0%, black 6%, black 94%, transparent 100%);
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
 }
 
 .toast-brand-ticker-track {
   display: flex;
-  gap: 60px;
+  gap: 40px;
   width: max-content;
   align-items: center;
-  animation: toastBrandTicker 35s linear infinite;
-  padding: 10px 0;
+  animation: toastBrandTicker 45s linear infinite;
+  padding: 6px 0;
 }
 
-.toast-brand-ticker-container:hover .toast-brand-ticker-track {
+.toast-brand-ticker-track-reverse {
+  display: flex;
+  gap: 40px;
+  width: max-content;
+  align-items: center;
+  animation: toastBrandTickerReverse 40s linear infinite;
+  padding: 6px 0;
+}
+
+.toast-brand-ticker-container:hover .toast-brand-ticker-track,
+.toast-brand-ticker-container:hover .toast-brand-ticker-track-reverse {
   animation-play-state: paused;
 }
 
 @keyframes toastBrandTicker {
-  0% { transform: translateX(0); }
-  100% { transform: translateX(-33.333%); }
+  0% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+@keyframes toastBrandTickerReverse {
+  0% {
+    transform: translateX(-50%);
+  }
+
+  100% {
+    transform: translateX(0);
+  }
 }
 
 .toast-brand-logo-item {
@@ -55,10 +83,13 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 10px 16px;
+  padding: 8px 18px;
   transition: all 0.25s ease;
   user-select: none;
   z-index: 1;
+  background: rgba(248, 250, 252, 0.6);
+  border-radius: 14px;
+  border: 1px solid rgba(226, 232, 240, 0.8);
 }
 
 .toast-brand-logo-item.is-hovered,
@@ -87,6 +118,7 @@
   letter-spacing: 0.12em;
   font-size: 1.1rem;
 }
+
 .brand-french-laundry .bold-letter {
   font-size: 1.35rem;
   font-weight: 900;
@@ -97,6 +129,7 @@
   font-weight: 700;
   color: #0284C7;
 }
+
 .brand-mendocino .small-farms {
   font-size: 0.85rem;
   color: #0369A1;
@@ -114,6 +147,7 @@
   font-size: 1.35rem;
   font-style: italic;
 }
+
 .marea-sub {
   font-size: 0.55rem;
   display: block;
@@ -135,6 +169,7 @@
   letter-spacing: 0.08em;
   text-align: center;
 }
+
 .ushg-sub {
   display: block;
   font-size: 0.62rem;
@@ -145,6 +180,7 @@
   font-weight: 900;
   letter-spacing: 0.05em;
 }
+
 .hh-sub {
   font-size: 0.72rem;
   color: #8c8680;
@@ -246,7 +282,7 @@
 }
 
 .toast-trustbar-main-headline {
-  font-size:2.5rem;
+  font-size: 2.5rem;
   font-weight: 700;
   color: #0D1117;
   letter-spacing: -0.035em;
@@ -453,7 +489,7 @@
   line-height: 1.35;
   margin: 0;
   font-weight: 400;
- 
+
 }
 
 /* ============================================================
@@ -717,8 +753,13 @@
 }
 
 @keyframes scanLaser {
-  0% { transform: translateY(-8px); }
-  100% { transform: translateY(8px); }
+  0% {
+    transform: translateY(-8px);
+  }
+
+  100% {
+    transform: translateY(8px);
+  }
 }
 
 .toast-phone-barcode-badge {
@@ -857,4 +898,3 @@
   color: #ffffff !important;
   border-color: #FF4C00 !important;
 }
-

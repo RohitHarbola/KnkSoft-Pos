@@ -155,12 +155,13 @@ export const Footer: React.FC = () => {
               </div>
 
               <div className="pt-2">
-                <Link
-                  href="/contact"
-                  className="text-xs text-[#FF4C00] hover:text-[#DE3700] font-bold flex items-center gap-1"
+                <button
+                  type="button"
+                  onClick={() => openDemoModal('Helpdesk & Direct Support')}
+                  className="text-xs text-[#FF4C00] hover:text-[#DE3700] font-bold flex items-center gap-1 cursor-pointer bg-transparent border-0 p-0 text-left"
                 >
                   Visit Support &amp; Helpdesk Center <ArrowRight style={{ width: 12, height: 12 }} />
-                </Link>
+                </button>
               </div>
             </div>
           </div>
@@ -181,15 +182,27 @@ export const Footer: React.FC = () => {
               Pricing Plans
             </Link>
             <span className="text-slate-300">|</span>
-            <Link href="/contact" className="hover:text-[#FF4C00] transition-colors">
+            <button
+              type="button"
+              onClick={() => openDemoModal('Privacy Policy Inquiry')}
+              className="hover:text-[#FF4C00] transition-colors bg-transparent border-0 p-0 cursor-pointer text-xs text-slate-500"
+            >
               Privacy Policy
-            </Link>
-            <Link href="/contact" className="hover:text-[#FF4C00] transition-colors">
+            </button>
+            <button
+              type="button"
+              onClick={() => openDemoModal('Terms of Service Inquiry')}
+              className="hover:text-[#FF4C00] transition-colors bg-transparent border-0 p-0 cursor-pointer text-xs text-slate-500"
+            >
               Terms of Service
-            </Link>
-            <Link href="/contact" className="hover:text-[#FF4C00] transition-colors">
+            </button>
+            <button
+              type="button"
+              onClick={() => openDemoModal('Refund Policy Inquiry')}
+              className="hover:text-[#FF4C00] transition-colors bg-transparent border-0 p-0 cursor-pointer text-xs text-slate-500"
+            >
               Refund Policy
-            </Link>
+            </button>
           </div>
         </div>
 

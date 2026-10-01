@@ -2,6 +2,7 @@
 
 import React from 'react';
 import Link from 'next/link';
+import { useDemoModal } from '@/context/DemoModalContext';
 import {
   BookOpen,
   FileText,
@@ -81,6 +82,7 @@ const RESOURCES = [
 ];
 
 export default function ResourcesPage() {
+  const { openDemoModal } = useDemoModal();
   return (
     <div className="bg-white min-h-screen">
       {/* 1. HERO SECTION (Pure White Background, Compact Spacing) */}
@@ -106,13 +108,14 @@ export default function ResourcesPage() {
               <span>Read Knowledge Articles</span>
               <ArrowRight className="w-3.5 h-3.5" />
             </Link>
-            <Link
-              href="/contact"
-              className="inline-flex items-center gap-1.5 px-5 py-2.5 rounded-full border border-slate-300 bg-white text-slate-800 font-semibold text-xs hover:bg-slate-50 transition-colors"
+            <button
+              type="button"
+              onClick={() => openDemoModal('Resources & Guides Support')}
+              className="inline-flex items-center gap-1.5 px-5 py-2.5 rounded-full border border-slate-300 bg-white text-slate-800 font-semibold text-xs hover:bg-slate-50 transition-colors cursor-pointer"
             >
               <PhoneCall className="w-3.5 h-3.5 text-[#FF4C00]" />
-              <span>Contact Support</span>
-            </Link>
+              <span>Contact Support / Demo</span>
+            </button>
           </div>
         </div>
       </section>

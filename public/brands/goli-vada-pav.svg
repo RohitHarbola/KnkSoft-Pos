@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 60" fill="none">
+  <rect width="240" height="60" rx="10" fill="transparent"/>
+  <!-- Goli Vada Pav Badge -->
+  <g transform="translate(10, 10)">
+    <circle cx="20" cy="20" r="18" fill="#DC2626"/>
+    <!-- Vada Pav Bun icon -->
+    <path d="M12 21c0-4.5 3.5-8 8-8s8 3.5 8 8H12z" fill="#FBBF24"/>
+    <circle cx="20" cy="22" r="4.5" fill="#B45309"/>
+    <path d="M11 24h18a2 2 0 0 1 2 2v1a2 2 0 0 1-2 2H11a2 2 0 0 1-2-2v-1a2 2 0 0 1 2-2z" fill="#FBBF24"/>
+    <circle cx="16" cy="18" r="0.8" fill="#78350F"/>
+    <circle cx="20" cy="17" r="0.8" fill="#78350F"/>
+    <circle cx="24" cy="18" r="0.8" fill="#78350F"/>
+  </g>
+  <!-- Text: Goli VADA PAV -->
+  <text x="56" y="31" font-family="'Impact', 'Arial Black', sans-serif" font-size="22" font-weight="900" letter-spacing="1" fill="#DC2626">GOLI</text>
+  <text x="110" y="31" font-family="'Montserrat', sans-serif" font-size="14" font-weight="800" letter-spacing="1.5" fill="#1E293B">VADA PAV</text>
+  <text x="57" y="45" font-family="'Inter', sans-serif" font-size="7.5" font-weight="800" letter-spacing="2.5" fill="#16A34A">NO. 1 TASTY &amp; CRISPY</text>
+</svg>

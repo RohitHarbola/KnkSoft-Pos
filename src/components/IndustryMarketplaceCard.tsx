@@ -36,13 +36,13 @@ export const IndustryMarketplaceCard: React.FC<IndustryMarketplaceCardProps> = (
     <motion.div
       variants={variants}
       custom={custom}
-      className="bg-white rounded-xl sm:rounded-2xl p-4 sm:p-5 border border-slate-200/90 shadow-sm hover:shadow-md transition-all duration-300 flex flex-col justify-between group hover:-translate-y-0.5 h-full"
+      className="bg-white rounded-xl sm:rounded-2xl p-3.5 sm:p-4 border border-slate-200/90 shadow-sm hover:shadow-md transition-all duration-300 flex flex-col justify-between group hover:-translate-y-0.5"
     >
       <div>
         {/* Top Header: Icon & Badge */}
-        <div className="flex items-center justify-between mb-3">
+        <div className="flex items-center justify-between mb-2.5">
           <div className="p-2 sm:p-2.5 bg-orange-500/10 rounded-lg sm:rounded-xl text-[#FF8C00] group-hover:bg-[#FF8C00] group-hover:text-white transition-colors duration-300">
-            <Icon className="w-4.5 h-4.5 sm:w-5 sm:h-5" />
+            <Icon className="w-4 h-4 sm:w-4.5 sm:h-4.5" />
           </div>
           {item.badge && (
             <span className="text-[10px] sm:text-[11px] font-semibold px-2.5 py-0.5 rounded-full bg-[#f9f5f3] text-[#565352] border border-[#e8e2de]">
@@ -53,16 +53,16 @@ export const IndustryMarketplaceCard: React.FC<IndustryMarketplaceCardProps> = (
 
         {/* Content Body */}
         <div>
-          <h3 className="text-sm sm:text-base font-bold text-slate-900 mb-1.5 group-hover:text-[#FF8C00] transition-colors line-clamp-1">
+          <h3 className="text-sm sm:text-base font-bold text-slate-900 mb-1 group-hover:text-[#FF8C00] transition-colors line-clamp-1">
             {item.name}
           </h3>
-          <p className="text-slate-600 text-xs leading-relaxed mb-2.5 font-normal line-clamp-2">
+          <p className="text-slate-600 text-xs leading-relaxed mb-2 font-normal line-clamp-2">
             {item.desc || item.solution}
           </p>
 
           {/* Solves Bottleneck Callout */}
           {item.painPoint && (
-            <div className="bg-slate-50 border border-slate-100 rounded-lg p-2 mb-2.5 text-[11px] text-slate-600">
+            <div className="bg-slate-50 border border-slate-100 rounded-lg p-2 mb-2 text-[11px] text-slate-600">
               <strong className="text-slate-900 block font-semibold mb-0.5 text-[11px]">Solves bottleneck:</strong>
               <span className="line-clamp-2">{item.painPoint}</span>
             </div>
@@ -70,7 +70,7 @@ export const IndustryMarketplaceCard: React.FC<IndustryMarketplaceCardProps> = (
 
           {/* Key Features Bullet List */}
           {item.features && item.features.length > 0 && (
-            <div className="space-y-1 mb-3">
+            <div className="space-y-1 mb-2">
               {item.features.slice(0, 3).map((feat, idx) => (
                 <div key={idx} className="flex items-center gap-1.5 text-[11px] font-medium text-slate-700">
                   <Check className="w-3 h-3 text-[#FF8C00] flex-shrink-0" />
@@ -83,7 +83,7 @@ export const IndustryMarketplaceCard: React.FC<IndustryMarketplaceCardProps> = (
       </div>
 
       {/* Bottom Actions */}
-      <div className="pt-3 border-t border-slate-100 flex items-center justify-between mt-auto">
+      <div className="pt-2.5 border-t border-slate-100 flex items-center justify-between">
         {item.href ? (
           <Link
             href={item.href}

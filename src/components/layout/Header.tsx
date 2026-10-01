@@ -26,7 +26,6 @@ import {
   BookOpen,
   FileText,
   PhoneCall,
-  LogIn,
   Printer,
   Zap,
   CheckCircle2,
@@ -127,7 +126,7 @@ export const Header: React.FC = () => {
     { name: 'Restaurant Recipe & Costing Playbook', href: '/resources/blog', desc: 'Reduce wastage & calculate food margins', icon: BookOpen, tag: 'F&B Strategy' },
     { name: 'Swiggy & Zomato Optimization Playbook', href: '/resources/blog', desc: 'Maximize delivery ratings & menu combo conversions', icon: Video, tag: 'Growth' },
     { name: 'Knowledge Base & Video Guides', href: '/resources', desc: 'Step-by-step cashier training & owner tutorials', icon: Sparkles, tag: 'Tutorials' },
-    { name: '24/7 Regional Technical Support', href: '/contact', desc: 'Direct WhatsApp and phone assistance across India', icon: PhoneCall, tag: 'Live Help' },
+    { name: '24/7 Regional Technical Support', href: '', isDemo: true, desc: 'Direct WhatsApp and phone assistance across India', icon: PhoneCall, tag: 'Live Help' },
   ];
 
   return (
@@ -429,6 +428,33 @@ export const Header: React.FC = () => {
                         <div className="grid grid-cols-2 gap-1">
                           {resourceLinks.map((item) => {
                             const Icon = item.icon;
+                            if (item.isDemo) {
+                              return (
+                                <button
+                                  key={item.name}
+                                  type="button"
+                                  onClick={() => {
+                                    setActiveDropdown(null);
+                                    openDemoModal(item.name);
+                                  }}
+                                  className="w-full text-left flex items-start gap-2 p-1.5 rounded-lg mega-menu-item cursor-pointer group hover:bg-slate-50 dark:hover:bg-slate-800/80"
+                                >
+                                  <div className="w-7 h-7 rounded-md bg-orange-50 dark:bg-slate-800 text-[#FF4C00] flex items-center justify-center flex-shrink-0 mega-menu-icon shadow-xs">
+                                    <Icon className="w-3.5 h-3.5" />
+                                  </div>
+                                  <div className="min-w-0">
+                                    <div className="flex items-center gap-1">
+                                      <span className="text-xs font-bold text-slate-900 dark:text-white group-hover:text-[#FF4C00] transition-colors truncate">
+                                        {item.name}
+                                      </span>
+                                    </div>
+                                    <div className="text-[10px] text-slate-500 dark:text-slate-400 leading-snug line-clamp-1">
+                                      {item.desc}
+                                    </div>
+                                  </div>
+                                </button>
+                              );
+                            }
                             return (
                               <Link
                                 key={item.name}
@@ -490,14 +516,6 @@ export const Header: React.FC = () => {
 
             {/* Right Side Navigation & Action Button */}
             <div className="hidden lg:flex items-center gap-3 text-[14px] font-semibold text-slate-800">
-              <Link
-                href="/contact"
-                className="text-xs font-semibold text-slate-700 hover:text-[#FF4C00] transition-colors flex items-center gap-1.5 px-3 py-1.5 rounded-full hover:bg-orange-50/50"
-              >
-                <LogIn className="w-3.5 h-3.5" />
-                <span>Login</span>
-              </Link>
-
               {/* Book A Demo Button */}
               <button
                 type="button"
@@ -665,13 +683,16 @@ export const Header: React.FC = () => {
               >
                 Customer Case Studies
               </Link>
-              <Link
-                href="/contact"
-                onClick={() => setIsMobileMenuOpen(false)}
-                className="block px-3 py-1.5 rounded-lg hover:bg-slate-50 dark:hover:bg-slate-800"
+              <button
+                type="button"
+                onClick={() => {
+                  setIsMobileMenuOpen(false);
+                  openDemoModal('Contact & 24/7 Support');
+                }}
+                className="w-full text-left block px-3 py-1.5 rounded-lg hover:bg-slate-50 dark:hover:bg-slate-800 cursor-pointer text-slate-800 dark:text-slate-200"
               >
                 Contact &amp; 24/7 Support
-              </Link>
+              </button>
             </div>
 
             {/* Action Buttons in Mobile Drawer */}

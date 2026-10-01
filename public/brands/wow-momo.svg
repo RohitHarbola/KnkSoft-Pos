@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 60" fill="none">
+  <rect width="240" height="60" rx="10" fill="transparent"/>
+  <!-- Momo Dumpling Badge -->
+  <g transform="translate(10, 10)">
+    <circle cx="20" cy="20" r="18" fill="#FFCC00"/>
+    <path d="M12 24c0-5 3.5-9 8-9s8 4 8 9c0 3-3.5 5-8 5s-8-2-8-5z" fill="#D8232A"/>
+    <!-- Dumpling pleats -->
+    <path d="M16 17c1 2 2 4 4 4m4-4c-1 2-2 4-4 4m0-4v4" stroke="#FFF" stroke-width="1.4" stroke-linecap="round"/>
+    <circle cx="20" cy="14" r="1.5" fill="#FFF"/>
+  </g>
+  <!-- Text: Wow! momo -->
+  <text x="56" y="33" font-family="'Arial Black', 'Montserrat', sans-serif" font-size="22" font-weight="900" letter-spacing="-0.5" fill="#D8232A">Wow!</text>
+  <text x="124" y="33" font-family="'Arial Black', 'Montserrat', sans-serif" font-size="22" font-weight="900" letter-spacing="-0.5" fill="#1E293B">momo</text>
+  <text x="57" y="47" font-family="'Inter', sans-serif" font-size="7.5" font-weight="800" letter-spacing="2.5" fill="#D97706">FOODS • INDIA</text>
+</svg>
