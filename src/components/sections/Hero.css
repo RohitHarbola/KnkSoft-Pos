@@ -325,7 +325,7 @@
 }
 
 /* ============================================================
-   RIGHT VISUAL PANEL
+   RIGHT VISUAL PANEL — 3D PERSPECTIVE & CARD DESIGN
    ============================================================ */
 .hero-visual {
   position: relative;
@@ -333,37 +333,46 @@
   min-width: 0;
 }
 
-.hero-screen-card {
+.hero-3d-perspective-container {
+  perspective: 1200px;
+  perspective-origin: center center;
+  transform-style: preserve-3d;
+}
+
+.hero-screen-card.hero-3d-card {
+  position: relative;
   background: #151B26;
-  border: 1px solid rgba(13, 17, 23, 0.08);
-  border-radius: 18px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 20px;
   overflow: hidden;
+  will-change: transform;
+  transform-style: preserve-3d;
   box-shadow:
-    0 24px 60px -20px rgba(13, 17, 23, 0.28),
-    0 12px 28px -12px rgba(255, 76, 0, 0.12),
-    0 0 0 1px rgba(13, 17, 23, 0.05);
-  animation: heroCardFloat 7s ease-in-out infinite;
+    0 24px 60px -15px rgba(13, 17, 23, 0.35),
+    0 12px 28px -10px rgba(255, 76, 0, 0.15),
+    0 0 0 1px rgba(255, 255, 255, 0.08);
+  transition: box-shadow 0.3s ease;
 }
 
-@keyframes heroCardFloat {
-
-  0%,
-  100% {
-    transform: translateY(0px);
-  }
-
-  50% {
-    transform: translateY(-6px);
-  }
+.hero-3d-perspective-container:hover .hero-screen-card.hero-3d-card {
+  box-shadow:
+    0 35px 75px -20px rgba(13, 17, 23, 0.45),
+    0 20px 40px -12px rgba(255, 76, 0, 0.22),
+    0 0 0 1px rgba(255, 76, 0, 0.3);
 }
 
-@media (max-width: 768px) {
-  .hero-screen-card {
-    animation: none;
-  }
+.hero-3d-spotlight {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 20;
+  transition: opacity 0.3s ease;
+  border-radius: 20px;
 }
 
 .hero-screen-topbar {
+  position: relative;
+  z-index: 10;
   background: #1E2638;
   padding: 9px 14px;
   display: flex;

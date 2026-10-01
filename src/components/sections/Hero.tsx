@@ -1,7 +1,8 @@
 'use client';
 
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
 import Image from 'next/image';
+import { motion, useMotionValue, useSpring, useTransform } from 'framer-motion';
 import {
       ShieldCheck,
       Zap,
@@ -15,7 +16,7 @@ import {
       Printer,
       Check,
       LayoutDashboard,
-      Calculator
+      Calculator,
 } from 'lucide-react';
 import { useDemoModal } from '@/context/DemoModalContext';
 
@@ -46,6 +47,42 @@ export const Hero: React.FC = () => {
       const [paymentDone, setPaymentDone] = useState(false);
       const [activeMode, setActiveMode] = useState<'restaurant' | 'retail' | 'pharma'>('restaurant');
 
+      // 3D Card Tilt with Framer Motion Springs
+      const cardRef = useRef<HTMLDivElement>(null);
+      const mouseX = useMotionValue(0);
+      const mouseY = useMotionValue(0);
+      const [spotlightPos, setSpotlightPos] = useState({ x: 50, y: 50 });
+      const [isHovered, setIsHovered] = useState(false);
+
+      const springConfig = { damping: 20, stiffness: 240, mass: 0.8 };
+      const rotateX = useSpring(useTransform(mouseY, [-0.5, 0.5], [10, -10]), springConfig);
+      const rotateY = useSpring(useTransform(mouseX, [-0.5, 0.5], [-10, 10]), springConfig);
+
+      const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
+            if (!cardRef.current) return;
+            const rect = cardRef.current.getBoundingClientRect();
+            const clientX = e.clientX - rect.left;
+            const clientY = e.clientY - rect.top;
+
+            // Normalized coordinates [-0.5, 0.5]
+            const normX = clientX / rect.width - 0.5;
+            const normY = clientY / rect.height - 0.5;
+
+            mouseX.set(normX);
+            mouseY.set(normY);
+            setSpotlightPos({ x: clientX, y: clientY });
+      };
+
+      const handleMouseEnter = () => {
+            setIsHovered(true);
+      };
+
+      const handleMouseLeave = () => {
+            setIsHovered(false);
+            mouseX.set(0);
+            mouseY.set(0);
+      };
+
       const addItem = (item: typeof SAMPLE_ITEMS[0]) => {
             setCart((prev) => {
                   const existing = prev.find((i) => i.id === item.id);
@@ -74,7 +111,7 @@ export const Hero: React.FC = () => {
 
       return (
             <section className="hero-section">
-                  {/* Ambient background layers — white theme, no image */}
+                  {/* Ambient background layers — white theme */}
                   <div className="hero-bg-image-container" aria-hidden="true">
                         <div className="hero-bg-dark-overlay" />
                         <div className="hero-bg-radial-glow" />
@@ -83,8 +120,13 @@ export const Hero: React.FC = () => {
 
                   <div className="hero-inner">
 
-                        {/* LEFT COLUMN */}
-                        <div className="hero-content">
+                        {/* LEFT COLUMN: Animated Entrance */}
+                        <motion.div
+                              className="hero-content"
+                              initial={{ opacity: 0, y: 24 }}
+                              animate={{ opacity: 1, y: 0 }}
+                              transition={{ duration: 0.6, ease: 'easeOut' }}
+                        >
 
                               {/* Trust Pill */}
                               <div className="hero-pill">
@@ -153,12 +195,44 @@ export const Hero: React.FC = () => {
                                           14-Day Free Trial
                                     </div>
                               </div>
-                        </div>
+                        </motion.div>
 
-                        {/* RIGHT COLUMN: POS DASHBOARD & INTERACTIVE SIMULATOR */}
-                        <div className="hero-visual" id="interactive-demo">
-                              {/* Main POS Screen Card */}
-                              <div className="hero-screen-card">
+                        {/* RIGHT COLUMN: 3D INTERACTIVE POS CARD (NO BADGES) */}
+                        <div
+                              className="hero-visual hero-3d-perspective-container"
+                              id="interactive-demo"
+                              ref={cardRef}
+                              onMouseMove={handleMouseMove}
+                              onMouseEnter={handleMouseEnter}
+                              onMouseLeave={handleMouseLeave}
+                        >
+                              {/* 3D Motion Card with Layered Depth */}
+                              <motion.div
+                                    className="hero-screen-card hero-3d-card"
+                                    style={{
+                                          rotateX,
+                                          rotateY,
+                                          transformStyle: 'preserve-3d',
+                                    }}
+                                    animate={!isHovered ? {
+                                          y: [0, -7, 0],
+                                    } : { y: 0 }}
+                                    transition={{
+                                          duration: 6,
+                                          repeat: Infinity,
+                                          ease: 'easeInOut',
+                                    }}
+                              >
+                                    {/* 3D Dynamic Specular Sheen Spotlight */}
+                                    <div
+                                          className="hero-3d-spotlight"
+                                          style={{
+                                                background: isHovered
+                                                      ? `radial-gradient(400px circle at ${spotlightPos.x}px ${spotlightPos.y}px, rgba(255, 76, 0, 0.14), transparent 70%)`
+                                                      : 'none',
+                                                opacity: isHovered ? 1 : 0,
+                                          }}
+                                    />
                                     {/* Topbar with View Switcher */}
                                     <div className="hero-screen-topbar">
                                           <span className="hero-screen-dot" style={{ background: '#EF4444' }} />
@@ -385,7 +459,7 @@ export const Hero: React.FC = () => {
                                                 </div>
                                           </div>
                                     )}
-                              </div>
+                              </motion.div>
                         </div>
                   </div>
             </section>
