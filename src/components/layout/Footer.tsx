@@ -178,9 +178,6 @@ export const Footer: React.FC = () => {
             <Link href="/resources" className="hover:text-[#FF4C00] transition-colors">
               GST Knowledge Base
             </Link>
-            <Link href="/pricing" className="hover:text-[#FF4C00] transition-colors">
-              Pricing Plans
-            </Link>
             <span className="text-slate-300">|</span>
             <button
               type="button"

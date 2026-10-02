@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 import {
   CreditCard,
@@ -66,6 +66,17 @@ export const Integrations: React.FC = () => {
   const [selectedCat, setSelectedCat] = useState('all');
   const [searchQuery, setSearchQuery] = useState('');
 
+  useEffect(() => {
+    if (typeof window !== 'undefined' && window.location.hash === '#integrations') {
+      const el = document.getElementById('integrations');
+      if (el) {
+        setTimeout(() => {
+          el.scrollIntoView({ behavior: 'smooth' });
+        }, 100);
+      }
+    }
+  }, []);
+
   const filtered = INTEGRATIONS_DATA.filter((item) => {
     const matchesCat = selectedCat === 'all' || item.cat === selectedCat;
     const matchesSearch = item.name.toLowerCase().includes(searchQuery.toLowerCase()) || item.desc.toLowerCase().includes(searchQuery.toLowerCase());
@@ -73,7 +84,7 @@ export const Integrations: React.FC = () => {
   });
 
   return (
-    <section className="integrations-section">
+    <section className="integrations-section" id="integrations">
       <div className="integrations-inner">
 
         {/* Section Header */}

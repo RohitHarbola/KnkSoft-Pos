@@ -96,6 +96,18 @@ export const Header: React.FC = () => {
     }, 180);
   };
 
+  const handleIntegrationsClick = (e: React.MouseEvent) => {
+    setActiveDropdown(null);
+    setIsMobileMenuOpen(false);
+    if (pathname === '/') {
+      e.preventDefault();
+      const el = document.getElementById('integrations');
+      if (el) {
+        el.scrollIntoView({ behavior: 'smooth' });
+      }
+    }
+  };
+
   // 1. Product software modules
   const productLinks = [
     { name: 'POS & Fast Billing', href: '/product/pos-billing', desc: 'Sub-second thermal billing, barcode & offline sync', icon: Receipt, tag: '⚡ Sub-2s' },
@@ -369,12 +381,9 @@ export const Header: React.FC = () => {
 
                 {/* 3. INTEGRATIONS LINK */}
                 <Link
-                  href="/integrations"
-                  className={`px-3 py-1.5 rounded-lg transition-colors cursor-pointer ${
-                    pathname === '/integrations'
-                      ? 'text-pos-orange font-bold bg-orange-50/60 dark:bg-orange-500/10'
-                      : 'text-slate-800 dark:text-slate-200 hover:text-pos-orange dark:hover:text-pos-orange hover:bg-slate-50 dark:hover:bg-slate-800/60'
-                  }`}
+                  href="/#integrations"
+                  onClick={handleIntegrationsClick}
+                  className="px-3 py-1.5 rounded-lg transition-colors cursor-pointer text-slate-800 dark:text-slate-200 hover:text-pos-orange dark:hover:text-pos-orange hover:bg-slate-50 dark:hover:bg-slate-800/60"
                 >
                   Integrations
                 </Link>
@@ -670,9 +679,9 @@ export const Header: React.FC = () => {
                 Hardware Ecosystem
               </Link>
               <Link
-                href="/integrations"
-                onClick={() => setIsMobileMenuOpen(false)}
-                className="block px-3 py-1.5 rounded-lg hover:bg-slate-50 dark:hover:bg-slate-800"
+                href="/#integrations"
+                onClick={handleIntegrationsClick}
+                className="block px-3 py-1.5 rounded-lg hover:bg-slate-50 dark:hover:bg-slate-800 cursor-pointer"
               >
                 Integrations (UPI, Swiggy, Tally)
               </Link>

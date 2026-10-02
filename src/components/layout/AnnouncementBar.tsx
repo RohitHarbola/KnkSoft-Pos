@@ -1,11 +1,12 @@
 'use client';
 
 import React, { useState } from 'react';
-import { X, ShieldCheck, PhoneCall, ArrowRight, Sparkles } from 'lucide-react';
-import Link from 'next/link';
+import { X, ShieldCheck, PhoneCall, ArrowRight } from 'lucide-react';
+import { useDemoModal } from '@/context/DemoModalContext';
 
 export const AnnouncementBar: React.FC = () => {
   const [isVisible, setIsVisible] = useState(true);
+  const { openDemoModal } = useDemoModal();
 
   if (!isVisible) return null;
 
@@ -38,12 +39,13 @@ export const AnnouncementBar: React.FC = () => {
           <span style={{ color: '#0C4A6E', fontWeight: 600 }}>
             High-Speed Touch POS &amp; Instant UPI Soundbox Integration
           </span>
-          <Link
-            href="/pricing"
-            style={{ display: 'inline-flex', alignItems: 'center', gap: 4, color: '#0284C7', fontWeight: 700, textDecoration: 'underline', fontSize: '0.8rem' }}
+          <button
+            type="button"
+            onClick={() => openDemoModal('14-Day Free Trial')}
+            style={{ display: 'inline-flex', alignItems: 'center', gap: 4, color: '#0284C7', fontWeight: 700, textDecoration: 'underline', fontSize: '0.8rem', background: 'transparent', border: 'none', cursor: 'pointer', padding: 0 }}
           >
             Claim 14-Day Free Trial <ArrowRight style={{ width: 12, height: 12 }} />
-          </Link>
+          </button>
         </div>
 
         {/* Right close */}

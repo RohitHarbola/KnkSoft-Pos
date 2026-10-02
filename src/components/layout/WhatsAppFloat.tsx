@@ -30,7 +30,7 @@ export const WhatsAppFloat: React.FC = () => {
             </button>
           </div>
           <p className="text-slate-600 mb-3 leading-relaxed">
-            Need quick pricing, hardware quotes, or GST setup advice? Chat with KNK:SOFT experts instantly!
+            Need a live demo, hardware quotes, or GST setup advice? Chat with KNK:SOFT experts instantly!
           </p>
           <button
             onClick={handleWhatsAppClick}

@@ -5,6 +5,7 @@
 .integrations-section {
   background: #ffffff;
   padding: 5rem 0;
+  scroll-margin-top: 80px;
 }
 
 .integrations-inner {
