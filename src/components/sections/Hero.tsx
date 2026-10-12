@@ -131,7 +131,7 @@ export const Hero: React.FC = () => {
                               {/* Trust Pill */}
                               <div className="hero-pill">
                                     <span className="hero-pill-dot" />
-                                    GST 2.0 Compliant | 100% Offline-First Architecture
+                                    100% Offline-First Architecture
                               </div>
 
                               {/* Main Headline */}
@@ -151,14 +151,14 @@ export const Hero: React.FC = () => {
                                           <WifiOff className="hero-chip-icon" />
                                           Works 100% Offline
                                     </div>
-                                    <div className="hero-chip">
+                                    {/* <div className="hero-chip">
                                           <ShieldCheck className="hero-chip-icon" />
                                           1-Click GSTR-1 / 3B
-                                    </div>
-                                    <div className="hero-chip">
+                                    </div> */}
+                                    {/* <div className="hero-chip">
                                           <Zap className="hero-chip-icon" />
                                           3-Sec UPI Audio Sync
-                                    </div>
+                                    </div> */}
                               </div>
 
                               {/* CTA Buttons */}

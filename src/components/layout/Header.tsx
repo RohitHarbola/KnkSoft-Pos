@@ -107,6 +107,28 @@ export const Header: React.FC = () => {
       }
     }
   };
+   const handleProductClick = (e: React.MouseEvent) => {
+    setActiveDropdown(null);
+    setIsMobileMenuOpen(false);
+    if (pathname === '/') {
+      e.preventDefault();
+      const el = document.getElementById('features');
+      if (el) {
+        el.scrollIntoView({ behavior: 'smooth' });
+      }
+    }
+  };
+  const handleIndustriesClick = (e: React.MouseEvent) => {
+    setActiveDropdown(null);
+    setIsMobileMenuOpen(false);
+    if (pathname === '/') {
+      e.preventDefault();
+      const el = document.getElementById('industries');
+      if (el) {
+        el.scrollIntoView({ behavior: 'smooth' });
+      }
+    }
+  };
 
   // 1. Product software modules
   const productLinks = [
@@ -162,222 +184,23 @@ export const Header: React.FC = () => {
 
               {/* Desktop Navigation Tabs */}
               <nav className="hidden lg:flex items-center gap-1 xl:gap-2 text-[14px] font-semibold text-slate-800 dark:text-slate-200">
-                
-                {/* 1. PRODUCT ANIMATED DROPDOWN */}
-                <div
-                  className="relative"
-                  onMouseEnter={() => handleMouseEnter('product')}
-                  onMouseLeave={handleMouseLeave}
+                {/* product */}
+
+                           <Link
+                  href="/#features"
+                  onClick={handleProductClick}
+                  className="px-3 py-1.5 rounded-lg transition-colors cursor-pointer text-slate-800 dark:text-slate-200 hover:text-pos-orange dark:hover:text-pos-orange hover:bg-slate-50 dark:hover:bg-slate-800/60"
                 >
-                  <button
-                    type="button"
-                    onClick={() => setActiveDropdown(activeDropdown === 'product' ? null : 'product')}
-                    className={`flex items-center gap-1 px-3 py-1.5 rounded-lg transition-colors cursor-pointer ${
-                      pathname.startsWith('/product') || activeDropdown === 'product'
-                        ? 'text-pos-orange font-bold bg-orange-50/60 dark:bg-orange-500/10'
-                        : 'text-slate-800 dark:text-slate-200 hover:text-pos-orange dark:hover:text-pos-orange hover:bg-slate-50 dark:hover:bg-slate-800/60'
-                    }`}
-                    aria-expanded={activeDropdown === 'product'}
-                  >
-                    Product
-                    <ChevronDown
-                      className={`w-3.5 h-3.5 transition-transform duration-200 ${
-                        activeDropdown === 'product' ? 'rotate-180 text-pos-orange' : 'text-slate-400'
-                      }`}
-                    />
-                  </button>
-
-                  {/* Mega-Menu Dropdown Panel */}
-                  {activeDropdown === 'product' && (
-                    <div
-                      className="absolute top-full left-0 w-[740px] bg-white dark:bg-[#151B26] rounded-2xl p-4 grid grid-cols-12 gap-4 mt-1 z-50 mega-menu-panel pt-4 border border-slate-200 dark:border-slate-800 before:content-[''] before:absolute before:-top-3 before:left-0 before:right-0 before:h-4 before:bg-transparent"
-                      onMouseEnter={() => handleMouseEnter('product')}
-                      onMouseLeave={handleMouseLeave}
-                    >
-                      {/* Left 8 Modules List */}
-                      <div className="col-span-8 space-y-1">
-                        <div className="flex items-center justify-between pb-1.5 mb-1.5 border-b border-slate-100 dark:border-slate-800">
-                          <span className="text-[10.5px] font-bold text-[#FF4C00] uppercase tracking-wider flex items-center gap-1.5">
-                            <span className="header-live-dot" /> Core POS Modules
-                          </span>
-                          <Link
-                            href="/product"
-                            onClick={() => setActiveDropdown(null)}
-                            className="text-xs text-slate-700 dark:text-slate-300 font-bold hover:text-[#FF4C00] transition-colors flex items-center gap-1"
-                          >
-                            All Modules <ArrowRight className="w-3 h-3" />
-                          </Link>
-                        </div>
-
-                        <div className="grid grid-cols-2 gap-1">
-                          {productLinks.map((item) => {
-                            const Icon = item.icon;
-                            return (
-                              <Link
-                                key={item.name}
-                                href={item.href}
-                                onClick={() => setActiveDropdown(null)}
-                                className="flex items-start gap-2 p-1.5 rounded-lg mega-menu-item cursor-pointer group hover:bg-slate-50 dark:hover:bg-slate-800/80"
-                              >
-                                <div className="w-7 h-7 rounded-md bg-[#FFF3EF] dark:bg-slate-800 text-[#FF4C00] flex items-center justify-center flex-shrink-0 mega-menu-icon shadow-xs">
-                                  <Icon className="w-3.5 h-3.5" />
-                                </div>
-                                <div className="min-w-0">
-                                  <div className="flex items-center gap-1">
-                                    <span className="text-xs font-bold text-slate-900 dark:text-white group-hover:text-[#FF4C00] transition-colors truncate">
-                                      {item.name}
-                                    </span>
-                                  </div>
-                                  <div className="text-[10px] text-slate-500 dark:text-slate-400 leading-snug line-clamp-1">
-                                    {item.desc}
-                                  </div>
-                                </div>
-                              </Link>
-                            );
-                          })}
-                        </div>
-                      </div>
-
-                      {/* Right Feature Card */}
-                      <div className="col-span-4 mega-menu-featured-card p-3.5 text-white flex flex-col justify-between">
-                        <div className="mega-menu-featured-glow" />
-                        <div className="space-y-1.5 relative z-10">
-                          <div className="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-orange-500/20 text-[#FF7A3D] text-[9.5px] font-bold uppercase">
-                            <Zap className="w-2.5 h-2.5" /> Offline First
-                          </div>
-                          <div className="text-xs font-bold text-white leading-tight">
-                            Zero Bills Lost During Internet Cuts
-                          </div>
-                          <p className="text-[10px] text-slate-300 leading-relaxed">
-                            Continuous local database processing with instant thermal print.
-                          </p>
-                        </div>
-
-                        <div className="pt-2 relative z-10">
-                          <button
-                            type="button"
-                            onClick={() => {
-                              setActiveDropdown(null);
-                              openDemoModal();
-                            }}
-                            className="w-full py-1.5 px-2.5 rounded-lg bg-[#FF4C00] text-white font-bold text-xs hover:bg-[#de3700] transition-colors shadow-xs flex items-center justify-center gap-1"
-                          >
-                            <span>Schedule Live Demo</span>
-                            <ArrowRight className="w-3 h-3" />
-                          </button>
-                        </div>
-                      </div>
-                    </div>
-                  )}
-                </div>
-
-                {/* 2. INDUSTRIES ANIMATED DROPDOWN */}
-                <div
-                  className="relative"
-                  onMouseEnter={() => handleMouseEnter('industries')}
-                  onMouseLeave={handleMouseLeave}
+                  Product
+                </Link>
+                {/* //industries */}
+                   <Link
+                  href="/#industries"
+                  onClick={handleIndustriesClick}
+                  className="px-3 py-1.5 rounded-lg transition-colors cursor-pointer text-slate-800 dark:text-slate-200 hover:text-pos-orange dark:hover:text-pos-orange hover:bg-slate-50 dark:hover:bg-slate-800/60"
                 >
-                  <button
-                    type="button"
-                    onClick={() => setActiveDropdown(activeDropdown === 'industries' ? null : 'industries')}
-                    className={`flex items-center gap-1 px-3 py-1.5 rounded-lg transition-colors cursor-pointer ${
-                      pathname.startsWith('/industries') || activeDropdown === 'industries'
-                        ? 'text-pos-orange font-bold bg-orange-50/60 dark:bg-orange-500/10'
-                        : 'text-slate-800 dark:text-slate-200 hover:text-pos-orange dark:hover:text-pos-orange hover:bg-slate-50 dark:hover:bg-slate-800/60'
-                    }`}
-                    aria-expanded={activeDropdown === 'industries'}
-                  >
-                    Industries
-                    <ChevronDown
-                      className={`w-3.5 h-3.5 transition-transform duration-200 ${
-                        activeDropdown === 'industries' ? 'rotate-180 text-pos-orange' : 'text-slate-400'
-                      }`}
-                    />
-                  </button>
-
-                  {/* Mega-Menu Dropdown Panel */}
-                  {activeDropdown === 'industries' && (
-                    <div
-                      className="absolute top-full left-0 w-[720px] bg-white dark:bg-[#151B26] rounded-2xl p-4 grid grid-cols-12 gap-4 mt-1 z-50 mega-menu-panel pt-4 border border-slate-200 dark:border-slate-800 before:content-[''] before:absolute before:-top-3 before:left-0 before:right-0 before:h-4 before:bg-transparent"
-                      onMouseEnter={() => handleMouseEnter('industries')}
-                      onMouseLeave={handleMouseLeave}
-                    >
-                      {/* Left 7 Outlets List */}
-                      <div className="col-span-8 space-y-1">
-                        <div className="flex items-center justify-between pb-1.5 mb-1.5 border-b border-slate-100 dark:border-slate-800">
-                          <span className="text-[10.5px] font-bold text-teal-700 dark:text-teal-400 uppercase tracking-wider flex items-center gap-1.5">
-                            <span className="header-live-dot" /> Tailored for Indian Retail &amp; F&amp;B
-                          </span>
-                          <Link
-                            href="/industries"
-                            onClick={() => setActiveDropdown(null)}
-                            className="text-xs text-slate-700 dark:text-slate-300 font-bold hover:text-teal-700 transition-colors flex items-center gap-1"
-                          >
-                            All Outlets <ArrowRight className="w-3 h-3" />
-                          </Link>
-                        </div>
-
-                        <div className="grid grid-cols-2 gap-1">
-                          {industryLinks.map((item) => {
-                            const Icon = item.icon;
-                            return (
-                              <Link
-                                key={item.name}
-                                href={item.href}
-                                onClick={() => setActiveDropdown(null)}
-                                className="flex items-start gap-2 p-1.5 rounded-lg mega-menu-item cursor-pointer group hover:bg-slate-50 dark:hover:bg-slate-800/80"
-                              >
-                                <div className="w-7 h-7 rounded-md bg-teal-50 dark:bg-slate-800 text-teal-700 dark:text-teal-400 flex items-center justify-center flex-shrink-0 mega-menu-icon shadow-xs">
-                                  <Icon className="w-3.5 h-3.5" />
-                                </div>
-                                <div className="min-w-0">
-                                  <div className="flex items-center gap-1">
-                                    <span className="text-xs font-bold text-slate-900 dark:text-white group-hover:text-teal-700 dark:group-hover:text-teal-400 transition-colors truncate">
-                                      {item.name}
-                                    </span>
-                                  </div>
-                                  <div className="text-[10px] text-slate-500 dark:text-slate-400 leading-snug line-clamp-1">
-                                    {item.desc}
-                                  </div>
-                                </div>
-                              </Link>
-                            );
-                          })}
-                        </div>
-                      </div>
-
-                      {/* Right Feature Card */}
-                      <div className="col-span-4 mega-menu-featured-card p-3.5 text-white flex flex-col justify-between">
-                        <div className="mega-menu-featured-glow" />
-                        <div className="space-y-1.5 relative z-10">
-                          <div className="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-teal-500/20 text-teal-300 text-[9.5px] font-bold uppercase">
-                            <CheckCircle2 className="w-2.5 h-2.5" /> Pre-Configured
-                          </div>
-                          <div className="text-xs font-bold text-white leading-tight">
-                            Custom Menus, HSN &amp; Barcodes Included
-                          </div>
-                          <p className="text-[10px] text-slate-300 leading-relaxed">
-                            Complimentary data import and printer configuration.
-                          </p>
-                        </div>
-
-                        <div className="pt-2 relative z-10">
-                          <button
-                            type="button"
-                            onClick={() => {
-                              setActiveDropdown(null);
-                              openDemoModal();
-                            }}
-                            className="w-full py-1.5 px-2.5 rounded-lg bg-teal-600 text-white font-bold text-xs hover:bg-teal-700 transition-colors shadow-xs flex items-center justify-center gap-1"
-                          >
-                            <span>Explore Industry Setup</span>
-                            <ArrowRight className="w-3 h-3" />
-                          </button>
-                        </div>
-                      </div>
-                    </div>
-                  )}
-                </div>
+                  Industries
+                </Link>
 
                 {/* 3. INTEGRATIONS LINK */}
                 <Link
@@ -598,7 +421,7 @@ export const Header: React.FC = () => {
             </div>
 
             {/* Industries Accordion */}
-            <div className="border-b border-slate-100 dark:border-slate-800 pb-2">
+            {/* <div className="border-b border-slate-100 dark:border-slate-800 pb-2">
               <button
                 type="button"
                 onClick={() => setMobileExpandedTab(mobileExpandedTab === 'industries' ? null : 'industries')}
@@ -631,7 +454,7 @@ export const Header: React.FC = () => {
                   </Link>
                 </div>
               )}
-            </div>
+            </div> */}
 
             {/* Resources Accordion */}
             <div className="border-b border-slate-100 dark:border-slate-800 pb-2">

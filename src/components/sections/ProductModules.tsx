@@ -19,7 +19,7 @@ export const MODULES = [
     id: 'pos',
     name: 'POS & Fast Billing',
     icon: Receipt,
-    image: '/home/hp-vision1.png',
+    image: '/home/hp-billing.png',
     caption: 'Keep serving customers with instant barcode scan and offline billing.',
   },
   {
@@ -36,11 +36,11 @@ export const MODULES = [
     image: '/home/hp-vision3.png',
     caption: '100% accurate GST calculations, e-invoicing & 1-click filing exports.',
   },
-   {
+  {
     id: 'Multi Store',
     name: 'Multi-Store Management',
     icon: ShieldCheck,
-    image: '/home/hp-vision3.png',
+    image: '/home/hp-multistore.png',
     caption: 'Seamless management of multiple locations with centralized control and reporting.',
   },
   {
@@ -54,7 +54,7 @@ export const MODULES = [
     id: 'crm',
     name: 'CRM & Loyalty',
     icon: Users,
-    image: '/home/hp-vision2.png',
+    image: '/home/hp-crm.png',
     caption: 'Zero-paper WhatsApp digital bills and automated customer loyalty points.',
   },
   {
@@ -68,6 +68,7 @@ export const MODULES = [
 
 export const ProductModules: React.FC = () => {
   const [activeIndex, setActiveIndex] = useState(0);
+  const [isDesktop, setIsDesktop] = useState(false);
   const trackRef = useRef<HTMLDivElement>(null);
   const isHoveringRef = useRef(false);
   const hoverTimeoutRef = useRef<NodeJS.Timeout | null>(null);
@@ -75,10 +76,19 @@ export const ProductModules: React.FC = () => {
 
   const activeModule = MODULES[activeIndex] || MODULES[0];
 
+  useEffect(() => {
+    const checkDesktop = () => {
+      setIsDesktop(window.innerWidth > 1024);
+    };
+    checkDesktop();
+    window.addEventListener('resize', checkDesktop);
+    return () => window.removeEventListener('resize', checkDesktop);
+  }, []);
+
   /**
    * Scroll Synchronization:
    * As the user scrolls through the track, calculates the scroll progress
-   * through the pinned track and smoothly activates the respective module (0 to 5).
+   * through the pinned track and smoothly activates the respective module (0 to 6).
    */
   const handleScroll = useCallback(() => {
     // If user recently hovered on a tab with mouse, don't immediately override it with micro-scroll
@@ -197,12 +207,13 @@ export const ProductModules: React.FC = () => {
                   role="tablist"
                   aria-label="Feature Modules"
                   style={{
-                    transform: `translateY(${listTranslateY}px)`,
+                    transform: isDesktop ? `translateY(${listTranslateY}px)` : 'none',
                     transition: 'transform 0.35s cubic-bezier(0.16, 1, 0.3, 1)',
                   }}
                 >
                   {MODULES.map((mod, idx) => {
                     const isActive = idx === activeIndex;
+                    const ModIcon = mod.icon;
                     return (
                       <div
                         key={mod.id}
@@ -217,7 +228,10 @@ export const ProductModules: React.FC = () => {
                           onMouseMove={() => handleMouseEnter(idx)}
                           className={`midshift-nav-item ${isActive ? 'active' : ''}`}
                         >
-                          <span className="midshift-nav-label">{mod.name}</span>
+                          <span className="midshift-nav-item-inner">
+                            <ModIcon className="midshift-nav-icon" />
+                            <span className="midshift-nav-label">{mod.name}</span>
+                          </span>
                           {isActive && (
                             <span className="midshift-nav-arrow" aria-hidden="true">
                               <ArrowRight style={{ width: 20, height: 20, strokeWidth: 2.5 }} />
@@ -235,24 +249,26 @@ export const ProductModules: React.FC = () => {
                 RIGHT COLUMN — Fixed Position Image Frame
                ============================== */}
             <div className="midshift-right-col">
-              <div className="midshift-image-frame">
-                {/* Stacked image layers with smooth crossfade */}
-                {MODULES.map((mod, idx) => (
-                  <div
-                    key={mod.id}
-                    className={`midshift-image-layer ${idx === activeIndex ? 'is-active' : ''}`}
-                    aria-hidden={idx !== activeIndex}
-                  >
-                    <Image
-                      src={mod.image}
-                      alt={mod.name}
-                      fill
-                      priority={idx === 0}
-                      sizes="(max-width: 1024px) 100vw, 550px"
-                      className="midshift-image"
-                    />
-                  </div>
-                ))}
+              <div className="midshift-image-card">
+                <div className="midshift-image-frame">
+                  {/* Stacked image layers with smooth crossfade */}
+                  {MODULES.map((mod, idx) => (
+                    <div
+                      key={mod.id}
+                      className={`midshift-image-layer ${idx === activeIndex ? 'is-active' : ''}`}
+                      aria-hidden={idx !== activeIndex}
+                    >
+                      <Image
+                        src={mod.image}
+                        alt={mod.name}
+                        fill
+                        priority={idx === 0}
+                        sizes="(max-width: 1024px) 100vw, 650px"
+                        className="midshift-image"
+                      />
+                    </div>
+                  ))}
+                </div>
 
                 {/* Bottom Caption Overlay */}
                 <div className="midshift-caption-banner">
